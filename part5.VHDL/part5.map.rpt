@@ -1,5 +1,5 @@
 Analysis & Synthesis report for part5
-Wed Apr 08 15:49:10 2020
+Wed Apr 08 20:03:20 2020
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -37,11 +37,14 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
  29. Parameter Settings for User Entity Instance: seg7:U7|regne:reg_R0
  30. altsyncram Parameter Settings by Entity Instance
  31. Port Connectivity Checks: "regn:U6"
- 32. Port Connectivity Checks: "proc:U3|regntimer:reg_6"
- 33. Port Connectivity Checks: "proc:U3"
- 34. Post-Synthesis Netlist Statistics for Top Partition
- 35. Elapsed Time Per Partition
- 36. Analysis & Synthesis Messages
+ 32. Port Connectivity Checks: "proc:U3|timer:timer_0"
+ 33. Port Connectivity Checks: "proc:U3|PSA:psa_0"
+ 34. Port Connectivity Checks: "proc:U3|prescaler:prescaler_0"
+ 35. Port Connectivity Checks: "proc:U3|regntimer:reg_6"
+ 36. Port Connectivity Checks: "proc:U3"
+ 37. Post-Synthesis Netlist Statistics for Top Partition
+ 38. Elapsed Time Per Partition
+ 39. Analysis & Synthesis Messages
 
 
 
@@ -68,7 +71,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Apr 08 15:49:10 2020       ;
+; Analysis & Synthesis Status     ; Successful - Wed Apr 08 20:03:20 2020       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; part5                                       ;
 ; Top-level Entity Name           ; part5                                       ;
@@ -192,28 +195,28 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                  ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                    ; Library ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------+---------+
-; part5.vhd                        ; yes             ; User VHDL File                         ; C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd              ;         ;
-; proc.vhd                         ; yes             ; User VHDL File                         ; C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd               ;         ;
-; flipflop.vhd                     ; yes             ; Auto-Found VHDL File                   ; C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/flipflop.vhd           ;         ;
-; inst_mem.vhd                     ; yes             ; Auto-Found Wizard-Generated File       ; C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/inst_mem.vhd           ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/altsyncram.tdf                ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/stratix_ram_block.inc         ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_mux.inc                   ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_decode.inc                ;         ;
-; aglobal161.inc                   ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/aglobal161.inc                ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/a_rdenreg.inc                 ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/altrom.inc                    ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/altram.inc                    ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/altdpram.inc                  ;         ;
-; db/altsyncram_pf24.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/db/altsyncram_pf24.tdf ;         ;
-; inst_mem.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/inst_mem.mif           ;         ;
-; seg7.vhd                         ; yes             ; Auto-Found VHDL File                   ; C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/seg7.vhd               ;         ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                               ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                 ; Library ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------+---------+
+; part5.vhd                        ; yes             ; User VHDL File                         ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd              ;         ;
+; proc.vhd                         ; yes             ; User VHDL File                         ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd               ;         ;
+; flipflop.vhd                     ; yes             ; Auto-Found VHDL File                   ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/flipflop.vhd           ;         ;
+; inst_mem.vhd                     ; yes             ; Auto-Found Wizard-Generated File       ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd           ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/altsyncram.tdf             ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/stratix_ram_block.inc      ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_mux.inc                ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_decode.inc             ;         ;
+; aglobal161.inc                   ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/aglobal161.inc             ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/a_rdenreg.inc              ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/altrom.inc                 ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/altram.inc                 ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/altdpram.inc               ;         ;
+; db/altsyncram_pf24.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/db/altsyncram_pf24.tdf ;         ;
+; inst_mem.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.mif           ;         ;
+; seg7.vhd                         ; yes             ; Auto-Found VHDL File                   ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd               ;         ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -419,7 +422,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+---------------------------------------------+
 ; Parameter Name ; Value ; Type                                        ;
 +----------------+-------+---------------------------------------------+
-; n              ; 8     ; Signed Integer                              ;
+; n              ; 16    ; Signed Integer                              ;
 +----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -594,15 +597,46 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+--------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "proc:U3|regntimer:reg_6"                                                               ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; r[7..5] ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; r[4..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; q       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "proc:U3|timer:timer_0"                                                                       ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; timer_on      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; selecteur8_16 ; Input  ; Info     ; Stuck at GND                                                                        ;
+; sortie        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "proc:U3|PSA:psa_0"                                                                    ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; sel    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; mx_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "proc:U3|prescaler:prescaler_0" ;
++----------+-------+----------+-----------------------------+
+; Port     ; Type  ; Severity ; Details                     ;
++----------+-------+----------+-----------------------------+
+; prescale ; Input ; Info     ; Stuck at GND                ;
++----------+-------+----------+-----------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "proc:U3|regntimer:reg_6"                                                                ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; r[7..5]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; r[15..8] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; r[4..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; q        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -660,62 +694,74 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Wed Apr 08 15:48:57 2020
+    Info: Processing started: Wed Apr 08 20:03:06 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part5 -c part5
 Warning (125092): Tcl Script File inst_mem.qip not found
     Info (125063): set_global_assignment -name QIP_FILE inst_mem.qip
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file part5.vhd
-    Info (12022): Found design unit 1: part5-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 14
-    Info (12023): Found entity 1: part5 File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 6
+    Info (12022): Found design unit 1: part5-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 14
+    Info (12023): Found entity 1: part5 File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 6
 Info (12021): Found 18 design units, including 9 entities, in source file proc.vhd
-    Info (12022): Found design unit 1: proc-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 13
-    Info (12022): Found design unit 2: pc_count-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 371
-    Info (12022): Found design unit 3: dec3to8-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 397
-    Info (12022): Found design unit 4: regn-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 426
-    Info (12022): Found design unit 5: regn1bit-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 447
-    Info (12022): Found design unit 6: regntimer-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 472
-    Info (12022): Found design unit 7: prescaler-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 500
-    Info (12022): Found design unit 8: compteur-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 559
-    Info (12022): Found design unit 9: PSA-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 603
-    Info (12023): Found entity 1: proc File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 5
-    Info (12023): Found entity 2: pc_count File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 365
-    Info (12023): Found entity 3: dec3to8 File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 392
-    Info (12023): Found entity 4: regn File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 418
-    Info (12023): Found entity 5: regn1bit File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 441
-    Info (12023): Found entity 6: regntimer File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 464
-    Info (12023): Found entity 7: prescaler File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 492
-    Info (12023): Found entity 8: compteur File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 550
-    Info (12023): Found entity 9: PSA File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 597
+    Info (12022): Found design unit 1: proc-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 13
+    Info (12022): Found design unit 2: pc_count-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 406
+    Info (12022): Found design unit 3: dec3to8-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 432
+    Info (12022): Found design unit 4: regn-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 461
+    Info (12022): Found design unit 5: regn1bit-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 482
+    Info (12022): Found design unit 6: regntimer-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 507
+    Info (12022): Found design unit 7: prescaler-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 535
+    Info (12022): Found design unit 8: timer-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 595
+    Info (12022): Found design unit 9: PSA-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 639
+    Info (12023): Found entity 1: proc File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 5
+    Info (12023): Found entity 2: pc_count File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 400
+    Info (12023): Found entity 3: dec3to8 File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 427
+    Info (12023): Found entity 4: regn File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 453
+    Info (12023): Found entity 5: regn1bit File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 476
+    Info (12023): Found entity 6: regntimer File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 499
+    Info (12023): Found entity 7: prescaler File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 527
+    Info (12023): Found entity 8: timer File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 585
+    Info (12023): Found entity 9: PSA File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 633
 Info (12127): Elaborating entity "part5" for the top level hierarchy
 Warning (12125): Using design file flipflop.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: flipflop-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/flipflop.vhd Line: 9
-    Info (12023): Found entity 1: flipflop File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/flipflop.vhd Line: 4
-Info (12128): Elaborating entity "flipflop" for hierarchy "flipflop:U1" File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 53
-Info (12128): Elaborating entity "proc" for hierarchy "proc:U3" File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 57
-Warning (10036): Verilog HDL or VHDL warning at proc.vhd(70): object "timer_out" assigned a value but never read File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 70
-Warning (10541): VHDL Signal Declaration warning at proc.vhd(78): used implicit default value for signal "R6" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 78
-Warning (10492): VHDL Process Statement warning at proc.vhd(154): signal "z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 154
-Warning (10492): VHDL Process Statement warning at proc.vhd(162): signal "z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 162
-Warning (10492): VHDL Process Statement warning at proc.vhd(170): signal "c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 170
-Warning (10492): VHDL Process Statement warning at proc.vhd(178): signal "c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 178
-Warning (10631): VHDL Process Statement warning at proc.vhd(304): inferring latch(es) for signal or variable "flag_c", which holds its previous value in one or more paths through the process File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 304
-Warning (10631): VHDL Process Statement warning at proc.vhd(304): inferring latch(es) for signal or variable "flag_z", which holds its previous value in one or more paths through the process File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 304
-Info (10041): Inferred latch for "flag_z" at proc.vhd(304) File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 304
-Info (10041): Inferred latch for "flag_c" at proc.vhd(304) File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 304
-Info (12128): Elaborating entity "dec3to8" for hierarchy "proc:U3|dec3to8:decX" File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 88
-Info (12128): Elaborating entity "regn" for hierarchy "proc:U3|regn:reg_0" File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 284
-Info (12128): Elaborating entity "regntimer" for hierarchy "proc:U3|regntimer:reg_6" File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 292
-Info (12128): Elaborating entity "pc_count" for hierarchy "proc:U3|pc_count:Upc" File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 295
-Info (12128): Elaborating entity "regn1bit" for hierarchy "proc:U3|regn1bit:reg_C" File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/proc.vhd Line: 338
+    Info (12022): Found design unit 1: flipflop-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/flipflop.vhd Line: 9
+    Info (12023): Found entity 1: flipflop File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/flipflop.vhd Line: 4
+Info (12128): Elaborating entity "flipflop" for hierarchy "flipflop:U1" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 53
+Info (12128): Elaborating entity "proc" for hierarchy "proc:U3" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 57
+Warning (10036): Verilog HDL or VHDL warning at proc.vhd(91): object "timer_out" assigned a value but never read File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 91
+Warning (10540): VHDL Signal Declaration warning at proc.vhd(92): used explicit default value for signal "prescale_factor" because signal was never assigned a value File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 92
+Warning (10540): VHDL Signal Declaration warning at proc.vhd(94): used explicit default value for signal "psa_select" because signal was never assigned a value File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 94
+Warning (10036): Verilog HDL or VHDL warning at proc.vhd(95): object "psa_out" assigned a value but never read File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 95
+Warning (10036): Verilog HDL or VHDL warning at proc.vhd(96): object "interrupt_flag" assigned a value but never read File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 96
+Warning (10540): VHDL Signal Declaration warning at proc.vhd(97): used explicit default value for signal "timer_on" because signal was never assigned a value File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 97
+Warning (10540): VHDL Signal Declaration warning at proc.vhd(98): used explicit default value for signal "timer_select_8_16" because signal was never assigned a value File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 98
+Warning (10541): VHDL Signal Declaration warning at proc.vhd(107): used implicit default value for signal "R6" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at proc.vhd(183): signal "z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 183
+Warning (10492): VHDL Process Statement warning at proc.vhd(191): signal "z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 191
+Warning (10492): VHDL Process Statement warning at proc.vhd(199): signal "c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 199
+Warning (10492): VHDL Process Statement warning at proc.vhd(207): signal "c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 207
+Warning (10631): VHDL Process Statement warning at proc.vhd(339): inferring latch(es) for signal or variable "flag_c", which holds its previous value in one or more paths through the process File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 339
+Warning (10631): VHDL Process Statement warning at proc.vhd(339): inferring latch(es) for signal or variable "flag_z", which holds its previous value in one or more paths through the process File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 339
+Info (10041): Inferred latch for "flag_z" at proc.vhd(339) File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 339
+Info (10041): Inferred latch for "flag_c" at proc.vhd(339) File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 339
+Info (12128): Elaborating entity "dec3to8" for hierarchy "proc:U3|dec3to8:decX" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 117
+Info (12128): Elaborating entity "regn" for hierarchy "proc:U3|regn:reg_0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 313
+Info (12128): Elaborating entity "regntimer" for hierarchy "proc:U3|regntimer:reg_6" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 321
+Info (12128): Elaborating entity "pc_count" for hierarchy "proc:U3|pc_count:Upc" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 324
+Info (12128): Elaborating entity "prescaler" for hierarchy "proc:U3|prescaler:prescaler_0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 333
+Warning (10492): VHDL Process Statement warning at proc.vhd(546): signal "prescale" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 546
+Info (12128): Elaborating entity "PSA" for hierarchy "proc:U3|PSA:psa_0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 334
+Info (12128): Elaborating entity "timer" for hierarchy "proc:U3|timer:timer_0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 335
+Warning (10492): VHDL Process Statement warning at proc.vhd(607): signal "selecteur8_16" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 607
+Warning (10492): VHDL Process Statement warning at proc.vhd(612): signal "timer_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 612
+Info (12128): Elaborating entity "regn1bit" for hierarchy "proc:U3|regn1bit:reg_C" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 373
 Warning (12125): Using design file inst_mem.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: inst_mem-SYN File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/inst_mem.vhd Line: 54
-    Info (12023): Found entity 1: inst_mem File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/inst_mem.vhd Line: 42
-Info (12128): Elaborating entity "inst_mem" for hierarchy "inst_mem:U4" File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 66
-Info (12128): Elaborating entity "altsyncram" for hierarchy "inst_mem:U4|altsyncram:altsyncram_component" File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/inst_mem.vhd Line: 61
-Info (12130): Elaborated megafunction instantiation "inst_mem:U4|altsyncram:altsyncram_component" File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/inst_mem.vhd Line: 61
-Info (12133): Instantiated megafunction "inst_mem:U4|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/inst_mem.vhd Line: 61
+    Info (12022): Found design unit 1: inst_mem-SYN File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd Line: 54
+    Info (12023): Found entity 1: inst_mem File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd Line: 42
+Info (12128): Elaborating entity "inst_mem" for hierarchy "inst_mem:U4" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 66
+Info (12128): Elaborating entity "altsyncram" for hierarchy "inst_mem:U4|altsyncram:altsyncram_component" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd Line: 61
+Info (12130): Elaborated megafunction instantiation "inst_mem:U4|altsyncram:altsyncram_component" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd Line: 61
+Info (12133): Instantiated megafunction "inst_mem:U4|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd Line: 61
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -767,57 +813,57 @@ Info (12133): Instantiated megafunction "inst_mem:U4|altsyncram:altsyncram_compo
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_pf24.tdf
-    Info (12023): Found entity 1: altsyncram_pf24 File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/db/altsyncram_pf24.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_pf24 File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/db/altsyncram_pf24.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_pf24" for hierarchy "inst_mem:U4|altsyncram:altsyncram_component|altsyncram_pf24:auto_generated" File: d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "regn" for hierarchy "regn:U5" File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 81
+Info (12128): Elaborating entity "regn" for hierarchy "regn:U5" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 81
 Warning (12125): Using design file seg7.vhd, which is not specified as a design file for the current project, but contains definitions for 4 design units and 2 entities in project
-    Info (12022): Found design unit 1: seg7-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/seg7.vhd Line: 12
-    Info (12022): Found design unit 2: regne-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/seg7.vhd Line: 42
-    Info (12023): Found entity 1: seg7 File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/seg7.vhd Line: 5
-    Info (12023): Found entity 2: regne File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/seg7.vhd Line: 35
-Info (12128): Elaborating entity "seg7" for hierarchy "seg7:U7" File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 90
-Warning (10541): VHDL Signal Declaration warning at seg7.vhd(9): used implicit default value for signal "H5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/seg7.vhd Line: 9
-Warning (10541): VHDL Signal Declaration warning at seg7.vhd(9): used implicit default value for signal "H4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/seg7.vhd Line: 9
-Warning (10541): VHDL Signal Declaration warning at seg7.vhd(9): used implicit default value for signal "H3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/seg7.vhd Line: 9
-Warning (10541): VHDL Signal Declaration warning at seg7.vhd(9): used implicit default value for signal "H2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/seg7.vhd Line: 9
-Warning (10541): VHDL Signal Declaration warning at seg7.vhd(9): used implicit default value for signal "H1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/seg7.vhd Line: 9
-Info (12128): Elaborating entity "regne" for hierarchy "seg7:U7|regne:reg_R0" File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/seg7.vhd Line: 27
+    Info (12022): Found design unit 1: seg7-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd Line: 12
+    Info (12022): Found design unit 2: regne-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd Line: 42
+    Info (12023): Found entity 1: seg7 File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd Line: 5
+    Info (12023): Found entity 2: regne File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd Line: 35
+Info (12128): Elaborating entity "seg7" for hierarchy "seg7:U7" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 90
+Warning (10541): VHDL Signal Declaration warning at seg7.vhd(9): used implicit default value for signal "H5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd Line: 9
+Warning (10541): VHDL Signal Declaration warning at seg7.vhd(9): used implicit default value for signal "H4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd Line: 9
+Warning (10541): VHDL Signal Declaration warning at seg7.vhd(9): used implicit default value for signal "H3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd Line: 9
+Warning (10541): VHDL Signal Declaration warning at seg7.vhd(9): used implicit default value for signal "H2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd Line: 9
+Warning (10541): VHDL Signal Declaration warning at seg7.vhd(9): used implicit default value for signal "H1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd Line: 9
+Info (12128): Elaborating entity "regne" for hierarchy "seg7:U7|regne:reg_R0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd Line: 27
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
-    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-laboratoire-3/DE1-SoC/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -826,10 +872,10 @@ Info (21057): Implemented 461 device resources after synthesis - the final resou
     Info (21059): Implemented 52 output pins
     Info (21061): Implemented 381 logic cells
     Info (21064): Implemented 16 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 54 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 63 warnings
     Info: Peak virtual memory: 4871 megabytes
-    Info: Processing ended: Wed Apr 08 15:49:10 2020
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Processing ended: Wed Apr 08 20:03:20 2020
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:31
 
 

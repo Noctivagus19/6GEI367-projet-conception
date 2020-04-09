@@ -34,11 +34,31 @@ ARCHITECTURE Behavior OF proc IS
                Q           : OUT STD_LOGIC);
     END COMPONENT;
 	 COMPONENT regntimer 
-    GENERIC ( n : INTEGER := 8);
+    GENERIC ( n : INTEGER := 16);
     PORT ( R           : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
            Rin, Clock  : IN  STD_LOGIC;
            Q           : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0));
 	END COMPONENT;
+	COMPONENT PSA 
+	PORT (D0, D1 : IN STD_LOGIC;
+			SEL : IN STD_LOGIC;
+			MX_OUT : OUT STD_LOGIC);
+	END COMPONENT;
+	COMPONENT prescaler 
+    PORT (
+          clk    : IN  STD_LOGIC;
+			 prescale : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+          clkout : OUT STD_LOGIC
+         );
+	END COMPONENT;
+	COMPONENT timer
+			PORT (
+					 clk: IN STD_LOGIC;
+					 timer_on : IN STD_LOGIC;
+					 selecteur8_16: IN STD_LOGIC; 
+					 sortie: OUT STD_LOGIC
+					 );
+	END COMPONENT; 
     COMPONENT flipflop 
         PORT (  D, Resetn, Clock  : IN  STD_LOGIC;
                 Q                 : OUT STD_LOGIC);
@@ -66,8 +86,17 @@ ARCHITECTURE Behavior OF proc IS
     CONSTANT Sel_D : STD_LOGIC_VECTOR(3 DOWNTO 0) := "1001";
     CONSTANT Sel_D8 : STD_LOGIC_VECTOR(3 DOWNTO 0) := "1010";
              -- Sel_D is immediate data, Sel_D8 is immediate data << 8
-	CONSTANT timer_config : STD_LOGIC_VECTOR(7 DOWNTO 0 ) := "11100000";
-	SIGNAL timer_out : STD_LOGIC_VECTOR(7 DOWNTO 0);
+				 
+	CONSTANT timer_config : STD_LOGIC_VECTOR(15 DOWNTO 0 ) := "0000000000100000";
+	SIGNAL timer_out : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SIGNAL prescale_factor : STD_LOGIC_VECTOR(2 DOWNTO 0) := timer_config(2 DOWNTO 0);
+	SIGNAL prescaler_out : STD_LOGIC;
+	SIGNAL psa_select: STD_LOGIC := timer_config(3);
+	SIGNAL psa_out: STD_LOGIC;
+	SIGNAL interrupt_flag : STD_LOGIC;
+	SIGNAL timer_on : STD_LOGIC := timer_config(5);
+	SIGNAL timer_select_8_16: STD_LOGIC := timer_config(4);
+	
     CONSTANT Sel_DIN : STD_LOGIC_VECTOR(3 DOWNTO 0) := "1011";
     SIGNAL Sel : STD_LOGIC_VECTOR(3 DOWNTO 0); -- bus selector
     SIGNAL Rin : STD_LOGIC_VECTOR(0 TO 7);
@@ -301,6 +330,12 @@ BEGIN
 
     reg_W: flipflop PORT MAP (W_D, Resetn, Clock, W);
     
+	 prescaler_0 : prescaler PORT MAP(clock, prescale_factor, prescaler_out);
+	 psa_0: PSA PORT MAP(prescaler_out, clock, psa_select, psa_out);
+	 timer_0: timer PORT MAP(clock, timer_on, timer_select_8_16, interrupt_flag);
+	 
+	 
+	 
     alu: PROCESS (AddSub, A, BusWires, ALUand)
 	 VARIABLE SumCarry : STD_LOGIC_VECTOR(16 DOWNTO 0);
     BEGIN
@@ -462,7 +497,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
 ENTITY regntimer IS
-    GENERIC ( n : INTEGER := 8);
+    GENERIC ( n : INTEGER := 16);
     PORT ( R           : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
            Rin, Clock  : IN  STD_LOGIC;
            Q           : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0));
@@ -547,16 +582,17 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL; 
 
 
-ENTITY compteur IS
+ENTITY timer IS
  PORT (
  clk: IN STD_LOGIC;
+ timer_on : IN STD_LOGIC;
  selecteur8_16: IN STD_LOGIC; 
  sortie: OUT STD_LOGIC
  );
-END compteur; 
+END timer; 
 
 
-ARCHITECTURE rtl OF compteur IS
+ARCHITECTURE rtl OF timer IS
 SIGNAL s_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
 --TYPE etats IS (a, s, d, f, g, h, j);
 --SIGNAL etat_present : etats;
@@ -573,7 +609,7 @@ BEGIN
 		WHEN '1' => s_count_check <="0000000011111111";
 	END CASE;
 	
-		IF clk'EVENT AND clk = '1' THEN
+		IF clk'EVENT AND clk = '1' AND timer_on = '1' THEN
 			s_count <= s_count + 1;
 				IF s_count < s_count_check THEN
 					sortie <= '0';
