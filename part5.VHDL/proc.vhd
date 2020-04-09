@@ -332,7 +332,7 @@ BEGIN
     
 	 prescaler_0 : prescaler PORT MAP(clock, prescale_factor, prescaler_out);
 	 psa_0: PSA PORT MAP(prescaler_out, clock, psa_select, psa_out);
-	 timer_0: timer PORT MAP(clock, timer_on, timer_select_8_16, interrupt_flag);
+	 timer_0: timer PORT MAP(psa_out, timer_on, timer_select_8_16, interrupt_flag);
 	 
 	 
 	 
@@ -535,38 +535,42 @@ END prescaler;
 ARCHITECTURE rtl OF prescaler IS
 
 SIGNAL s_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL s_count_check : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL s_clkout : STD_LOGIC;
 
 BEGIN
 
 PROCESS (clk)
+VARIABLE s_count_check : STD_LOGIC_VECTOR(7 DOWNTO 0);
+
 BEGIN
 
 	CASE prescale IS
-		WHEN "000" => s_count_check <="00000001";
-		WHEN "001" => s_count_check <="00000011";
-		WHEN "010" => s_count_check <="00000111";
-		WHEN "011" => s_count_check <="00001111";
-		WHEN "100" => s_count_check <="00011111";
-		WHEN "101" => s_count_check <="00111111";
-		WHEN "110" => s_count_check <="01111111";
-		WHEN "111" => s_count_check <="11111111";
+		WHEN "000" => s_count_check :="00000001";
+		WHEN "001" => s_count_check :="00000011";
+		WHEN "010" => s_count_check :="00000111";
+		WHEN "011" => s_count_check :="00001111";
+		WHEN "100" => s_count_check :="00011111";
+		WHEN "101" => s_count_check :="00111111";
+		WHEN "110" => s_count_check :="01111111";
+		WHEN "111" => s_count_check :="11111111";
+		WHEN OTHERS => s_count_check :="00000001";
 	END CASE;
 
     IF clk'EVENT AND clk = '1' THEN
-        IF s_count < s_count_check THEN
+         IF s_count <= s_count_check THEN
             s_clkout <= '0';
         ELSE
             s_clkout <= '1';        
         END IF;
 		  
-        IF s_count  < (s_count_check + s_count_check) THEN
+        IF s_count  <= (s_count_check+s_count_check) THEN
             s_count <= s_count + 1;
         ELSE
-            --s_count <= (OTHERS => '0');
-				s_count <= "0000000000000000";
+            s_count <= (OTHERS => '0');
+				--s_count <= "0000000000000000";
         END IF;
+		  
+		  
     END IF;
 END PROCESS;
 
@@ -594,9 +598,6 @@ END timer;
 
 ARCHITECTURE rtl OF timer IS
 SIGNAL s_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
---TYPE etats IS (a, s, d, f, g, h, j);
---SIGNAL etat_present : etats;
---SIGNAL etat_prochain : etats;
 SIGNAL s_count_check : STD_LOGIC_VECTOR(15 DOWNTO 0);
 
 BEGIN
@@ -605,9 +606,17 @@ BEGIN
 	
 		
 	CASE selecteur8_16 IS
-		WHEN '0' => s_count_check <="1111111111111111";
-		WHEN '1' => s_count_check <="0000000011111111";
+		WHEN '0' => s_count_check <="1111111111111111"; --compteur 16 bits
+		WHEN '1' => s_count_check <="0000000011111111"; --compteur 8 bits
+		WHEN OTHERS => s_count_check <="1111111111111111";
 	END CASE;
+	
+	--Compteur de test
+	--CASE selecteur8_16 IS
+		--WHEN '0' => s_count_check <="0000000000000011";
+		--WHEN '1' => s_count_check <="0000000000000111";
+		--WHEN OTHERS => s_count_check <="1111111111111111";
+	--END CASE;
 	
 		IF clk'EVENT AND clk = '1' AND timer_on = '1' THEN
 			s_count <= s_count + 1;
@@ -617,9 +626,7 @@ BEGIN
 					sortie <= '1';
 					s_count <= "0000000000000000";
 				END IF;
-				--IF s_compte > 113636 THEN
-				--	s_compte <= "0000000000000000";
-				--END IF;
+				
 		END IF;
 	END PROCESS;
 END; 

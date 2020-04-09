@@ -25,6 +25,14 @@ add wave -noupdate -label Buswires -radix hexadecimal /testbench/U1/U3/BusWires
 add wave -noupdate -label Sel /testbench/U1/U3/Sel
 add wave -noupdate -label z /testbench/U1/U3/z
 add wave -noupdate -label c /testbench/U1/U3/c
+add wave -noupdate -label prescale_factor -radix binary /testbench/U1/U3/prescale_factor
+add wave -noupdate -label prescaler_out /testbench/U1/U3/prescaler_out
+add wave -noupdate -label psa_select /testbench/U1/U3/psa_select
+add wave -noupdate -label psa_out /testbench/U1/U3/psa_out
+add wave -noupdate -label timer_on /testbench/U1/U3/timer_on
+add wave -noupdate -label timer_select_8_16 /testbench/U1/U3/timer_select_8_16
+add wave -noupdate -label interrupt_flag /testbench/U1/U3/interrupt_flag
+
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {504646 ps} 0}
 quietly wave cursor active 1

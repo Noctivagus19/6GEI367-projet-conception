@@ -16,9 +16,9 @@ if {[file exists ../inst_mem_bb.vhd]} {
 vlib work;
 
 # compile the VHDL source code in the parent folder
-vcom {C:\Users\The_N\Documents\GitHub\6GEI367-laboratoire-3\DE1-SoC\part5.VHDL\part5.vhd}
+vcom {C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\part5.vhd}
 # compile the VHDL code of the testbench
-vcom {C:\Users\The_N\Documents\GitHub\6GEI367-laboratoire-3\DE1-SoC\part5.VHDL\ModelSim\testbench.vht}
+vcom {C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\ModelSim\testbench.vht}
 # start the Simulator, including some libraries that may be needed
 vsim work.testbench -Lf 220model -Lf altera_mf
 # show waveforms specified in wave.do
