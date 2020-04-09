@@ -21,6 +21,7 @@ add wave -noupdate -label R1 -radix hexadecimal /testbench/U1/U3/R1
 add wave -noupdate -label R2 -radix hexadecimal /testbench/U1/U3/R2
 add wave -noupdate -label R3 -radix hexadecimal /testbench/U1/U3/R3
 add wave -noupdate -label R4 -radix hexadecimal /testbench/U1/U3/R4
+add wave -noupdate -label R5 -radix hexadecimal /testbench/U1/U3/R5
 add wave -noupdate -label Buswires -radix hexadecimal /testbench/U1/U3/BusWires
 add wave -noupdate -label Sel /testbench/U1/U3/Sel
 add wave -noupdate -label z /testbench/U1/U3/z

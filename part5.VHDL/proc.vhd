@@ -7,7 +7,8 @@ ENTITY proc IS
             Resetn, Clock, Run  : IN  STD_LOGIC;
             DOUT                : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
             ADDR                : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-            W                   : OUT STD_LOGIC);
+            W                   : OUT STD_LOGIC
+				);
 END proc;
    
 ARCHITECTURE Behavior OF proc IS
@@ -56,7 +57,7 @@ ARCHITECTURE Behavior OF proc IS
 					 clk: IN STD_LOGIC;
 					 timer_on : IN STD_LOGIC;
 					 selecteur8_16: IN STD_LOGIC; 
-					 sortie: OUT STD_LOGIC
+					 sortie: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
 					 );
 	END COMPONENT; 
     COMPONENT flipflop 
@@ -87,8 +88,9 @@ ARCHITECTURE Behavior OF proc IS
     CONSTANT Sel_D8 : STD_LOGIC_VECTOR(3 DOWNTO 0) := "1010";
              -- Sel_D is immediate data, Sel_D8 is immediate data << 8
 				 
-	CONSTANT timer_config : STD_LOGIC_VECTOR(15 DOWNTO 0 ) := "0000000000100000"; --Changer en signal et brancher dans la sortie de R6 (entree R? devient buswires)
+	SIGNAL timer_config : STD_LOGIC_VECTOR(15 DOWNTO 0 ); --Changer en signal et brancher dans la sortie de R6 (entree R? devient buswires)
 	SIGNAL regntimer_out : STD_LOGIC_VECTOR(15 DOWNTO 0); --Inactif
+	SIGNAL timer_out : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	SIGNAL prescale_factor : STD_LOGIC_VECTOR(2 DOWNTO 0) := timer_config(2 DOWNTO 0);
 	SIGNAL prescaler_out : STD_LOGIC;
 	SIGNAL psa_select: STD_LOGIC := timer_config(3);
@@ -315,10 +317,11 @@ BEGIN
     reg_2:  regn PORT MAP (BusWires, Rin(2), Clock, R2);
     reg_3:  regn PORT MAP (BusWires, Rin(3), Clock, R3);
     reg_4:  regn PORT MAP (BusWires, Rin(4), Clock, R4);
-    reg_5:  regn PORT MAP (BusWires, Rin(5), Clock, R5);
+	 
+    reg_5:  regn PORT MAP (timer_out, Clock, Clock, R5);
     --reg_6:  regn PORT MAP (BusWires, Rin(6), Clock, R6);
 	 
-	 reg_6:  regntimer PORT MAP (timer_config, Rin(6), Clock, regntimer_out);
+	 reg_6:  regntimer PORT MAP (BusWires, Rin(6), Clock, timer_config);
 
     -- pc_count(R, Resetn, Clock, E, L, Q);
     Upc: pc_count PORT MAP (BusWires, Resetn, Clock, pc_inc, Rin(7), PC);
@@ -332,8 +335,9 @@ BEGIN
     
 	 prescaler_0 : prescaler PORT MAP(clock, prescale_factor, prescaler_out);
 	 psa_0: PSA PORT MAP(prescaler_out, clock, psa_select, psa_out);
-	 timer_0: timer PORT MAP(psa_out, timer_on, timer_select_8_16, interrupt_flag);
+	 --timer_0: timer PORT MAP(psa_out, timer_on, timer_select_8_16, interrupt_flag);
 	 
+	 timer_0: timer PORT MAP(psa_out, timer_on, timer_select_8_16, timer_out);
 	 
 	 
     alu: PROCESS (AddSub, A, BusWires, ALUand)
@@ -591,7 +595,7 @@ ENTITY timer IS
  clk: IN STD_LOGIC;
  timer_on : IN STD_LOGIC;
  selecteur8_16: IN STD_LOGIC; 
- sortie: OUT STD_LOGIC
+ sortie: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
  );
 END timer; 
 
@@ -625,13 +629,16 @@ BEGIN
 		IF clk'EVENT AND clk = '1' AND timer_on = '1' THEN
 			--s_count <= s_count + 1;
 				IF s_count < s_count_check THEN
-					sortie <= '0';
+					--sortie <= '0';
+					sortie <= "0000000000000000";
 				ELSE
-					sortie <= '1';
+					--sortie <= '1';
+					sortie <= "0000000000000001";
 					--s_count <= "0000000000000000"; --Remise du timer à 0 non spécifiée dans le lab
 				END IF;
 				
-				IF s_count  < (s_count_check + s_count_check) THEN
+				--IF s_count  < (s_count_check + s_count_check) THEN
+				IF s_count  < (s_count_check + s_count_check) THEN -- Un seul pulse d'interrupt pour ne pas bloquer le bus
             s_count <= s_count + 1;
 				ELSE
             s_count <= (OTHERS => '0');
