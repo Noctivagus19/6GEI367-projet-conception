@@ -1107,7 +1107,6 @@ MX_OUT <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |part5|proc:U3|timer:timer_0
-clk => sortie~reg0.CLK
 clk => s_count[0].CLK
 clk => s_count[1].CLK
 clk => s_count[2].CLK
@@ -1124,7 +1123,7 @@ clk => s_count[12].CLK
 clk => s_count[13].CLK
 clk => s_count[14].CLK
 clk => s_count[15].CLK
-timer_on => sortie~reg0.ENA
+clk => sortie~reg0.CLK
 timer_on => s_count[0].ENA
 timer_on => s_count[1].ENA
 timer_on => s_count[2].ENA
@@ -1141,7 +1140,9 @@ timer_on => s_count[12].ENA
 timer_on => s_count[13].ENA
 timer_on => s_count[14].ENA
 timer_on => s_count[15].ENA
+timer_on => sortie~reg0.ENA
 selecteur8_16 => LessThan0.IN32
+selecteur8_16 => LessThan1.IN32
 sortie <= sortie~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

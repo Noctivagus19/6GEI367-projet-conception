@@ -31,6 +31,7 @@ add wave -noupdate -label psa_select /testbench/U1/U3/psa_select
 add wave -noupdate -label psa_out /testbench/U1/U3/psa_out
 add wave -noupdate -label timer_on /testbench/U1/U3/timer_on
 add wave -noupdate -label timer_select_8_16 /testbench/U1/U3/timer_select_8_16
+add wave -noupdate -label regntimer_out -radix binary /testbench/U1/U3/regntimer_out
 add wave -noupdate -label interrupt_flag /testbench/U1/U3/interrupt_flag
 
 TreeUpdate [SetDefaultTree]

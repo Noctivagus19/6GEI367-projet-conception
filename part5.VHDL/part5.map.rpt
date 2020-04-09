@@ -1,5 +1,5 @@
 Analysis & Synthesis report for part5
-Wed Apr 08 21:30:23 2020
+Thu Apr 09 11:21:27 2020
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -71,7 +71,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Apr 08 21:30:23 2020       ;
+; Analysis & Synthesis Status     ; Successful - Thu Apr 09 11:21:27 2020       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; part5                                       ;
 ; Top-level Entity Name           ; part5                                       ;
@@ -693,7 +693,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Wed Apr 08 21:30:10 2020
+    Info: Processing started: Thu Apr 09 11:21:14 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part5 -c part5
 Warning (125092): Tcl Script File inst_mem.qip not found
     Info (125063): set_global_assignment -name QIP_FILE inst_mem.qip
@@ -711,7 +711,7 @@ Info (12021): Found 18 design units, including 9 entities, in source file proc.v
     Info (12022): Found design unit 6: regntimer-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 507
     Info (12022): Found design unit 7: prescaler-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 535
     Info (12022): Found design unit 8: timer-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 599
-    Info (12022): Found design unit 9: PSA-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 650
+    Info (12022): Found design unit 9: PSA-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 657
     Info (12023): Found entity 1: proc File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 5
     Info (12023): Found entity 2: pc_count File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 400
     Info (12023): Found entity 3: dec3to8 File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 427
@@ -720,14 +720,14 @@ Info (12021): Found 18 design units, including 9 entities, in source file proc.v
     Info (12023): Found entity 6: regntimer File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 499
     Info (12023): Found entity 7: prescaler File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 527
     Info (12023): Found entity 8: timer File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 589
-    Info (12023): Found entity 9: PSA File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 644
+    Info (12023): Found entity 9: PSA File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 651
 Info (12127): Elaborating entity "part5" for the top level hierarchy
 Warning (12125): Using design file flipflop.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: flipflop-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/flipflop.vhd Line: 9
     Info (12023): Found entity 1: flipflop File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/flipflop.vhd Line: 4
 Info (12128): Elaborating entity "flipflop" for hierarchy "flipflop:U1" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 53
 Info (12128): Elaborating entity "proc" for hierarchy "proc:U3" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 57
-Warning (10036): Verilog HDL or VHDL warning at proc.vhd(91): object "timer_out" assigned a value but never read File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 91
+Warning (10036): Verilog HDL or VHDL warning at proc.vhd(91): object "regntimer_out" assigned a value but never read File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 91
 Warning (10540): VHDL Signal Declaration warning at proc.vhd(92): used explicit default value for signal "prescale_factor" because signal was never assigned a value File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 92
 Warning (10540): VHDL Signal Declaration warning at proc.vhd(94): used explicit default value for signal "psa_select" because signal was never assigned a value File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 94
 Warning (10036): Verilog HDL or VHDL warning at proc.vhd(96): object "interrupt_flag" assigned a value but never read File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 96
@@ -750,8 +750,8 @@ Info (12128): Elaborating entity "prescaler" for hierarchy "proc:U3|prescaler:pr
 Warning (10492): VHDL Process Statement warning at proc.vhd(547): signal "prescale" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 547
 Info (12128): Elaborating entity "PSA" for hierarchy "proc:U3|PSA:psa_0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 334
 Info (12128): Elaborating entity "timer" for hierarchy "proc:U3|timer:timer_0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 335
-Warning (10492): VHDL Process Statement warning at proc.vhd(617): signal "selecteur8_16" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 617
-Warning (10492): VHDL Process Statement warning at proc.vhd(623): signal "timer_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 623
+Warning (10492): VHDL Process Statement warning at proc.vhd(619): signal "selecteur8_16" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 619
+Warning (10492): VHDL Process Statement warning at proc.vhd(625): signal "timer_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 625
 Info (12128): Elaborating entity "regn1bit" for hierarchy "proc:U3|regn1bit:reg_C" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 373
 Warning (12125): Using design file inst_mem.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: inst_mem-SYN File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd Line: 54
@@ -872,8 +872,8 @@ Info (21057): Implemented 461 device resources after synthesis - the final resou
     Info (21064): Implemented 16 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 62 warnings
     Info: Peak virtual memory: 4874 megabytes
-    Info: Processing ended: Wed Apr 08 21:30:23 2020
+    Info: Processing ended: Thu Apr 09 11:21:27 2020
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Total CPU time (on all processors): 00:00:28
 
 

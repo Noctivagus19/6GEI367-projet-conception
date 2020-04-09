@@ -87,8 +87,8 @@ ARCHITECTURE Behavior OF proc IS
     CONSTANT Sel_D8 : STD_LOGIC_VECTOR(3 DOWNTO 0) := "1010";
              -- Sel_D is immediate data, Sel_D8 is immediate data << 8
 				 
-	CONSTANT timer_config : STD_LOGIC_VECTOR(15 DOWNTO 0 ) := "0000000000100000";
-	SIGNAL timer_out : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	CONSTANT timer_config : STD_LOGIC_VECTOR(15 DOWNTO 0 ) := "0000000000100000"; --Changer en signal et brancher dans la sortie de R6 (entree R? devient buswires)
+	SIGNAL regntimer_out : STD_LOGIC_VECTOR(15 DOWNTO 0); --Inactif
 	SIGNAL prescale_factor : STD_LOGIC_VECTOR(2 DOWNTO 0) := timer_config(2 DOWNTO 0);
 	SIGNAL prescaler_out : STD_LOGIC;
 	SIGNAL psa_select: STD_LOGIC := timer_config(3);
@@ -318,7 +318,7 @@ BEGIN
     reg_5:  regn PORT MAP (BusWires, Rin(5), Clock, R5);
     --reg_6:  regn PORT MAP (BusWires, Rin(6), Clock, R6);
 	 
-	 reg_6:  regntimer PORT MAP (timer_config, Rin(6), Clock, timer_out);
+	 reg_6:  regntimer PORT MAP (timer_config, Rin(6), Clock, regntimer_out);
 
     -- pc_count(R, Resetn, Clock, E, L, Q);
     Upc: pc_count PORT MAP (BusWires, Resetn, Clock, pc_inc, Rin(7), PC);
@@ -599,32 +599,43 @@ END timer;
 ARCHITECTURE rtl OF timer IS
 SIGNAL s_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL s_count_check : STD_LOGIC_VECTOR(15 DOWNTO 0);
+--SIGNAL init_timer: STD_LOGIC;
 
 BEGIN
 	PROCESS (clk)
+
 	BEGIN
 	
-		
+	--Compteur 8 et 16 bits
+	
+	--CASE selecteur8_16 IS
+	--	WHEN '0' => s_count_check <="1111111111111111"; --compteur 16 bits
+	--	WHEN '1' => s_count_check <="0000000011111111"; --compteur 8 bits
+	--	WHEN OTHERS => s_count_check <="1111111111111111";
+	--END CASE;
+	
+	--Compteur de test: 2 et 3 bits
+	
 	CASE selecteur8_16 IS
-		WHEN '0' => s_count_check <="1111111111111111"; --compteur 16 bits
-		WHEN '1' => s_count_check <="0000000011111111"; --compteur 8 bits
+		WHEN '0' => s_count_check <="0000000000000011";
+		WHEN '1' => s_count_check <="0000000000000111";
 		WHEN OTHERS => s_count_check <="1111111111111111";
 	END CASE;
 	
-	--Compteur de test
-	--CASE selecteur8_16 IS
-		--WHEN '0' => s_count_check <="0000000000000011";
-		--WHEN '1' => s_count_check <="0000000000000111";
-		--WHEN OTHERS => s_count_check <="1111111111111111";
-	--END CASE;
-	
 		IF clk'EVENT AND clk = '1' AND timer_on = '1' THEN
-			s_count <= s_count + 1;
+			--s_count <= s_count + 1;
 				IF s_count < s_count_check THEN
 					sortie <= '0';
 				ELSE
 					sortie <= '1';
-					s_count <= "0000000000000000";
+					--s_count <= "0000000000000000"; --Remise du timer à 0 non spécifiée dans le lab
+				END IF;
+				
+				IF s_count  < (s_count_check + s_count_check) THEN
+            s_count <= s_count + 1;
+				ELSE
+            s_count <= (OTHERS => '0');
+				--s_count <= "0000000000000000";
 				END IF;
 				
 		END IF;
