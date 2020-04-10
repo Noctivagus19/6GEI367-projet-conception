@@ -6,9 +6,10 @@ DATA_RADIX = HEX;
 CONTENT
 BEGIN
 0		: 1c20;		% mv   r6, #0x0020 %
-1		: da01;		% and r5, #0x0001 %
-2		: f204;		% beq  #0x0004 %
-3		: f401;		% bne  #0x0001 %
-4		: 3610;		% mvt  r3, #0x1000 %
-5		: ac03;		% st   r6, [r3] %
+1		: 0805;		% mv   r4, r5 %
+2		: 7801;		% sub  r4, #0x0001 %
+3		: f205;		% beq  #0x0005 %
+4		: f401;		% bne  #0x0001 %
+5		: 3610;		% mvt  r3, #0x1000 %
+6		: ac03;		% st   r6, [r3] %
 END;
