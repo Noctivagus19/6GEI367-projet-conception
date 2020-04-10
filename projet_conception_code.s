@@ -10,4 +10,5 @@ bne #LOOP
 
 TURN_LED_ON: 
 mvt r3, #LED_ADDRESS
-st r6, [r3]
+mvt r2, 0b1000000000
+st r2, [r3]
