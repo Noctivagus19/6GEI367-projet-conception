@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/simulation/modelsim
 Edec3to8
-Z1 w1586479963
+Z1 w1586531457
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
@@ -21,9 +21,9 @@ V8W]dj>]dVUUL6?7:f1dZg3
 !s100 FSP>?QhL=i8dlIDChISBW0
 Z6 OV;C;10.5b;63
 31
-Z7 !s110 1586479989
+Z7 !s110 1586531480
 !i10b 1
-Z8 !s108 1586479989.000000
+Z8 !s108 1586531480.000000
 Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd|
 Z10 !s107 C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd|
 !i113 1
@@ -60,7 +60,7 @@ V46OBoPL=D7J2Q<k@138UD1
 !s100 elB@DkKH0kSzghMbXVdP;0
 R6
 31
-Z16 !s110 1586479990
+Z16 !s110 1586531481
 !i10b 1
 R8
 Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/flipflop.vhd|
@@ -102,7 +102,7 @@ R6
 31
 R16
 !i10b 1
-Z22 !s108 1586479990.000000
+Z22 !s108 1586531481.000000
 Z23 !s90 -reportprogress|300|-93|-work|work|C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd|
 Z24 !s107 C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd|
 !i113 1
@@ -281,8 +281,8 @@ R3
 DEx4 work 4 proc 0 22 e?]>YJlz[c]^^9iTfS>KP1
 l114
 L14
-VTeMbhO7hKR31P084a^S_k2
-!s100 i4]3=:_i9F=dh[o_cjWS00
+V2IiL]aATj`;NX?YQGXQTQ3
+!s100 alJMPA;lL]84?7c=^jMHU2
 R6
 31
 R7
@@ -603,8 +603,8 @@ R3
 DEx4 work 5 timer 0 22 z>lb45<3IM4I1FCaTMEP61
 l608
 L603
-Vz1K;JI3>C[0:7zcF4dCdb2
-!s100 @>hnIdehP`9V?[he5T^Ao1
+VYliJ1H6nf>[71SG8nQ?0=2
+!s100 L>DF2az?=@S8oZN_M`fPb0
 R6
 31
 R7

@@ -318,7 +318,7 @@ BEGIN
     reg_3:  regn PORT MAP (BusWires, Rin(3), Clock, R3);
     reg_4:  regn PORT MAP (BusWires, Rin(4), Clock, R4);
 	 
-    reg_5:  regn PORT MAP (timer_out, Clock, Clock, R5);
+    reg_5:  regn PORT MAP (timer_out, timer_out(0), Clock, R5);
     --reg_6:  regn PORT MAP (BusWires, Rin(6), Clock, R6);
 	 
 	 reg_6:  regntimer PORT MAP (BusWires, Rin(6), Clock, timer_config);
@@ -601,7 +601,7 @@ END timer;
 
 
 ARCHITECTURE rtl OF timer IS
-SIGNAL s_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL s_count : STD_LOGIC_VECTOR(15 DOWNTO 0) := "0000000000000000";
 SIGNAL s_count_check : STD_LOGIC_VECTOR(15 DOWNTO 0);
 --SIGNAL init_timer: STD_LOGIC;
 
