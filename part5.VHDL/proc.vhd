@@ -333,11 +333,11 @@ BEGIN
 
     reg_W: flipflop PORT MAP (W_D, Resetn, Clock, W);
     
-	 prescaler_0 : prescaler PORT MAP(clock, prescale_factor, prescaler_out);
-	 psa_0: PSA PORT MAP(prescaler_out, clock, psa_select, psa_out);
+	 prescaler_0 : prescaler PORT MAP(clock, timer_config(2 DOWNTO 0), prescaler_out);
+	 psa_0: PSA PORT MAP(prescaler_out, clock, timer_config(3), psa_out);
 	 --timer_0: timer PORT MAP(psa_out, timer_on, timer_select_8_16, interrupt_flag);
 	 
-	 timer_0: timer PORT MAP(psa_out, timer_on, timer_select_8_16, timer_out);
+	 timer_0: timer PORT MAP(psa_out, timer_config(5), timer_config(4), timer_out);
 	 
 	 
     alu: PROCESS (AddSub, A, BusWires, ALUand)
