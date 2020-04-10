@@ -12,18 +12,18 @@
 # 
 # vcom -93 -work work {C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:06:50 on Apr 09,2020
+# Start time: 20:06:52 on Apr 09,2020
 # vcom -reportprogress 300 -93 -work work C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity part5
 # -- Compiling architecture Behavior of part5
-# End time: 17:06:50 on Apr 09,2020, Elapsed time: 0:00:00
+# End time: 20:06:52 on Apr 09,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:06:51 on Apr 09,2020
+# Start time: 20:06:52 on Apr 09,2020
 # vcom -reportprogress 300 -93 -work work C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -52,22 +52,22 @@
 # -- Compiling architecture rtl of timer
 # -- Compiling entity PSA
 # -- Compiling architecture rtl of PSA
-# End time: 17:06:51 on Apr 09,2020, Elapsed time: 0:00:00
+# End time: 20:06:52 on Apr 09,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 4
 # vcom -93 -work work {C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/flipflop.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:06:51 on Apr 09,2020
+# Start time: 20:06:52 on Apr 09,2020
 # vcom -reportprogress 300 -93 -work work C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/flipflop.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity flipflop
 # -- Compiling architecture Behavior of flipflop
-# End time: 17:06:51 on Apr 09,2020, Elapsed time: 0:00:00
+# End time: 20:06:52 on Apr 09,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:06:51 on Apr 09,2020
+# Start time: 20:06:52 on Apr 09,2020
 # vcom -reportprogress 300 -93 -work work C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -75,11 +75,11 @@
 # -- Loading package altera_mf_components
 # -- Compiling entity inst_mem
 # -- Compiling architecture SYN of inst_mem
-# End time: 17:06:51 on Apr 09,2020, Elapsed time: 0:00:00
+# End time: 20:06:53 on Apr 09,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:06:51 on Apr 09,2020
+# Start time: 20:06:53 on Apr 09,2020
 # vcom -reportprogress 300 -93 -work work C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -88,7 +88,7 @@
 # -- Compiling architecture Behavior of seg7
 # -- Compiling entity regne
 # -- Compiling architecture Behavior of regne
-# End time: 17:06:51 on Apr 09,2020, Elapsed time: 0:00:00
+# End time: 20:06:53 on Apr 09,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # do "C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/ModelSim/testbench.tcl"
@@ -113,19 +113,19 @@
 # compile the VHDL source code in the parent folder
 # vcom {C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\part5.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:06:51 on Apr 09,2020
+# Start time: 20:06:53 on Apr 09,2020
 # vcom -reportprogress 300 C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\part5.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity part5
 # -- Compiling architecture Behavior of part5
-# End time: 17:06:51 on Apr 09,2020, Elapsed time: 0:00:00
+# End time: 20:06:53 on Apr 09,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # compile the VHDL code of the testbench
 # vcom {C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\ModelSim\testbench.vht}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:06:51 on Apr 09,2020
+# Start time: 20:06:53 on Apr 09,2020
 # vcom -reportprogress 300 C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\ModelSim\testbench.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -134,12 +134,12 @@
 # -- Loading package STD_LOGIC_SIGNED
 # -- Compiling entity testbench
 # -- Compiling architecture Behavior of testbench
-# End time: 17:06:51 on Apr 09,2020, Elapsed time: 0:00:00
+# End time: 20:06:53 on Apr 09,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # start the Simulator, including some libraries that may be needed
 # vsim work.testbench -Lf 220model -Lf altera_mf
 # vsim work.testbench -Lf 220model -Lf altera_mf 
-# Start time: 17:06:51 on Apr 09,2020
+# Start time: 20:06:53 on Apr 09,2020
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -205,6 +205,7 @@
 # add wave -noupdate -label Sel /testbench/U1/U3/Sel
 # add wave -noupdate -label z /testbench/U1/U3/z
 # add wave -noupdate -label c /testbench/U1/U3/c
+# add wave -noupdate -label timer_config -radix binary /testbench/U1/U3/timer_config
 # add wave -noupdate -label prescale_factor -radix binary /testbench/U1/U3/prescale_factor
 # add wave -noupdate -label prescaler_out /testbench/U1/U3/prescaler_out
 # add wave -noupdate -label psa_select /testbench/U1/U3/psa_select
@@ -1562,5 +1563,5 @@
 #    Time: 28210 ns  Iteration: 4  Instance: /testbench/U1/U3
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 28210 ns  Iteration: 4  Instance: /testbench/U1/U3
-# End time: 17:07:08 on Apr 09,2020, Elapsed time: 0:00:17
+# End time: 20:10:55 on Apr 09,2020, Elapsed time: 0:04:02
 # Errors: 0, Warnings: 669
