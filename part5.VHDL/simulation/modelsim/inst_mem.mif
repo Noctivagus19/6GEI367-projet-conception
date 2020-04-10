@@ -5,18 +5,10 @@ DATA_RADIX = HEX;
 
 CONTENT
 BEGIN
-0		: 1002;		% mv   r0, #0x0002 %
-1		: 7001;		% sub  r0, #0x0001 %
-2		: f401;		% bne  #0x0001 %
-3		: f205;		% beq  #0x0005 %
-4		: 1e0d;		% mv   r7, #0x000d %
-5		: 30ff;		% mvt  r0, #0xff00 %
-6		: 50ff;		% add  r0, #0x00ff %
-7		: f609;		% bcc  #0x0009 %
-8		: 1e0d;		% mv   r7, #0x000d %
-9		: 5001;		% add  r0, #0x0001 %
-a		: f80c;		% bcs  #0x000c %
-b		: 1e0d;		% mv   r7, #0x000d %
-c		: f000;		% b    #0x0000 %
-d		: 1e0d;		% mv   r7, #0x000d %
+0		: 1c20;		% mv   r6, #0x0020 %
+1		: da01;		% and r5, #0x0001 %
+2		: f204;		% beq  #0x0004 %
+3		: f401;		% bne  #0x0001 %
+4		: 3610;		% mvt  r3, #0x1000 %
+5		: ac03;		% st   r6, [r3] %
 END;
