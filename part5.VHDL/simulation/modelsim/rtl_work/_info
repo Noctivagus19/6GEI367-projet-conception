@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/simulation/modelsim
 Edec3to8
-Z1 w1586531566
+Z1 w1586531457
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
@@ -21,9 +21,9 @@ V8W]dj>]dVUUL6?7:f1dZg3
 !s100 FSP>?QhL=i8dlIDChISBW0
 Z6 OV;C;10.5b;63
 31
-Z7 !s110 1586562714
+Z7 !s110 1586531480
 !i10b 1
-Z8 !s108 1586562713.000000
+Z8 !s108 1586531480.000000
 Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd|
 Z10 !s107 C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd|
 !i113 1
@@ -60,9 +60,9 @@ V46OBoPL=D7J2Q<k@138UD1
 !s100 elB@DkKH0kSzghMbXVdP;0
 R6
 31
-R7
+Z16 !s110 1586531481
 !i10b 1
-Z16 !s108 1586562714.000000
+R8
 Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/flipflop.vhd|
 Z18 !s107 C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/flipflop.vhd|
 !i113 1
@@ -78,9 +78,9 @@ V[a9TAPQaJhfimY`:E=M<51
 !s100 fQW`jH^hf9HA>mWccLFkB1
 R6
 31
-R7
-!i10b 1
 R16
+!i10b 1
+R8
 R17
 R18
 !i113 1
@@ -100,11 +100,11 @@ VAP?@UQbJf`g:YN1je@aJL1
 !s100 6Pk][0Ri_UHS4Z1[P]Wk23
 R6
 31
-R7
-!i10b 1
 R16
-Z22 !s90 -reportprogress|300|-93|-work|work|C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd|
-Z23 !s107 C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd|
+!i10b 1
+Z22 !s108 1586531481.000000
+Z23 !s90 -reportprogress|300|-93|-work|work|C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd|
+Z24 !s107 C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd|
 !i113 1
 R11
 R12
@@ -119,32 +119,32 @@ VRO?o1OVV2Vmi3WXARFMBc0
 !s100 FOoLU1PHX4A?lTH1SbfHH2
 R6
 31
-R7
-!i10b 1
 R16
+!i10b 1
 R22
 R23
+R24
 !i113 1
 R11
 R12
 Epart5
-Z24 w1586464076
+Z25 w1586464076
 R2
 R3
 R0
-Z25 8C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\part5.vhd
-Z26 FC:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\part5.vhd
+Z26 8C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\part5.vhd
+Z27 FC:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\part5.vhd
 l0
 L6
 V_eKlL_g>SCYiEIMW>lZJA3
 !s100 [[FHB;OSm4RAI8D[C@aGj3
 R6
 32
-R7
-!i10b 1
 R16
-Z27 !s90 -reportprogress|300|C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\part5.vhd|
-Z28 !s107 C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\part5.vhd|
+!i10b 1
+R22
+Z28 !s90 -reportprogress|300|C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\part5.vhd|
+Z29 !s107 C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\part5.vhd|
 !i113 1
 R12
 Abehavior
@@ -157,17 +157,17 @@ VdZ<c?U7bGoRU8S=J8aifB1
 !s100 9_ZYfEEgod?^N?<<2]HKE0
 R6
 32
-R7
-!i10b 1
 R16
-R27
+!i10b 1
+R22
 R28
+R29
 !i113 1
 R12
 Epc_count
 R1
-Z29 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z30 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z30 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z31 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 R2
 R3
 R0
@@ -188,8 +188,8 @@ R10
 R11
 R12
 Abehavior
-R29
 R30
+R31
 R2
 R3
 DEx4 work 8 pc_count 0 22 @VDYTLzCDCb]@WDE00MU;2
@@ -209,8 +209,8 @@ R11
 R12
 Eprescaler
 R1
-R29
 R30
+R31
 R2
 R3
 R0
@@ -231,8 +231,8 @@ R10
 R11
 R12
 Artl
-R29
 R30
+R31
 R2
 R3
 DEx4 work 9 prescaler 0 22 kmIF2K5Baaj7PmR0_OMSn1
@@ -252,8 +252,8 @@ R11
 R12
 Eproc
 R1
-R29
 R30
+R31
 R2
 R3
 R0
@@ -274,15 +274,15 @@ R10
 R11
 R12
 Abehavior
-R29
 R30
+R31
 R2
 R3
 DEx4 work 4 proc 0 22 e?]>YJlz[c]^^9iTfS>KP1
 l114
 L14
-V1^5SimXL]=C3RPB]188<^2
-!s100 EnK?6gW@lkGQCADG7[HM23
+V2IiL]aATj`;NX?YQGXQTQ3
+!s100 alJMPA;lL]84?7c=^jMHU2
 R6
 31
 R7
@@ -295,8 +295,8 @@ R11
 R12
 Epsa
 R1
-R29
 R30
+R31
 R2
 R3
 R0
@@ -317,8 +317,8 @@ R10
 R11
 R12
 Artl
-R29
 R30
+R31
 R2
 R3
 DEx4 work 3 psa 0 22 TNO=]WKP@8j=7CiJADZdf1
@@ -415,23 +415,23 @@ R10
 R11
 R12
 Eregne
-Z31 w1586042216
+Z32 w1586042216
 R2
 R3
 R0
-Z32 8C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd
-Z33 FC:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd
+Z33 8C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd
+Z34 FC:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd
 l0
 L35
 VFE<@OkmoijDWQU]hL=9fk3
 !s100 `EJ4<YFJ^o=4ai1DGd3OD2
 R6
 31
-R7
-!i10b 1
 R16
-Z34 !s90 -reportprogress|300|-93|-work|work|C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd|
-Z35 !s107 C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd|
+!i10b 1
+R22
+Z35 !s90 -reportprogress|300|-93|-work|work|C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd|
+Z36 !s107 C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd|
 !i113 1
 R11
 R12
@@ -445,11 +445,11 @@ VWMZZeNiA^PKR26lemCC6]2
 !s100 _E5zfZ]Pg]zP_9YVoDf3H2
 R6
 31
-R7
-!i10b 1
 R16
-R34
+!i10b 1
+R22
 R35
+R36
 !i113 1
 R11
 R12
@@ -493,23 +493,23 @@ R10
 R11
 R12
 Eseg7
-R31
+R32
 R2
 R3
 R0
-R32
 R33
+R34
 l0
 L5
 ViCg^_7oSnz@=dhbiYjWUn2
 !s100 6iNFN_0b<ZTN^:9z4aFXR1
 R6
 31
-R7
-!i10b 1
 R16
-R34
+!i10b 1
+R22
 R35
+R36
 !i113 1
 R11
 R12
@@ -523,39 +523,39 @@ V[_e5]d=_@AH<ecZTF?g]51
 !s100 ^ERX>m3k:3a0BJA_lhd@E1
 R6
 31
-R7
-!i10b 1
 R16
-R34
+!i10b 1
+R22
 R35
+R36
 !i113 1
 R11
 R12
 Etestbench
 R13
-R29
-Z36 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
+R30
+Z37 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
 R2
 R3
 R0
-Z37 8C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\ModelSim\testbench.vht
-Z38 FC:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\ModelSim\testbench.vht
+Z38 8C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\ModelSim\testbench.vht
+Z39 FC:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\ModelSim\testbench.vht
 l0
 L5
 V4HEm;e8eeXzGO9Ii`>i221
 !s100 D7:<`0Q6OimFfE2eLR4UN3
 R6
 32
-R7
-!i10b 1
 R16
-Z39 !s90 -reportprogress|300|C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\ModelSim\testbench.vht|
-Z40 !s107 C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\ModelSim\testbench.vht|
+!i10b 1
+R22
+Z40 !s90 -reportprogress|300|C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\ModelSim\testbench.vht|
+Z41 !s107 C:\Users\The_N\Documents\GitHub\6GEI367-projet-conceptioin\part5.VHDL\ModelSim\testbench.vht|
 !i113 1
 R12
 Abehavior
-R29
-R36
+R30
+R37
 R2
 R3
 DEx4 work 9 testbench 0 22 4HEm;e8eeXzGO9Ii`>i221
@@ -565,17 +565,17 @@ Vg[ZU1lNNNL7iZ>A4b:Efj3
 !s100 HJO?LPLNW4:IiD7MH3hl=0
 R6
 32
-R7
-!i10b 1
 R16
-R39
+!i10b 1
+R22
 R40
+R41
 !i113 1
 R12
 Etimer
 R1
-R29
 R30
+R31
 R2
 R3
 R0
@@ -596,8 +596,8 @@ R10
 R11
 R12
 Artl
-R29
 R30
+R31
 R2
 R3
 DEx4 work 5 timer 0 22 z>lb45<3IM4I1FCaTMEP61

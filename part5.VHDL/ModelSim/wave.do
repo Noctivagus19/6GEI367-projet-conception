@@ -3,7 +3,6 @@ quietly WaveActivateNextPane {} 0
 add wave -noupdate -label Clock /testbench/CLOCK_50
 add wave -noupdate -label KEY /testbench/KEY
 add wave -noupdate -label SW /testbench/SW
-add wave -noupdate -label LEDR /testbench/LEDR
 add wave -noupdate -divider proc
 add wave -noupdate -label Resetn /testbench/U1/U3/Resetn
 add wave -noupdate -label Run /testbench/U1/U3/Run

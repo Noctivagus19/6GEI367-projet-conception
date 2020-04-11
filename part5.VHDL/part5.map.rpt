@@ -1,5 +1,5 @@
 Analysis & Synthesis report for part5
-Fri Apr 10 19:45:07 2020
+Fri Apr 10 11:11:12 2020
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -71,13 +71,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Apr 10 19:45:07 2020       ;
+; Analysis & Synthesis Status     ; Successful - Fri Apr 10 11:11:12 2020       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; part5                                       ;
 ; Top-level Entity Name           ; part5                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 208                                         ;
+; Total registers                 ; 249                                         ;
 ; Total pins                      ; 64                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 4,096                                       ;
@@ -224,16 +224,16 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 147            ;
+; Estimate of Logic utilization (ALMs needed) ; 173            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 191            ;
-;     -- 7 input functions                    ; 5              ;
-;     -- 6 input functions                    ; 52             ;
-;     -- 5 input functions                    ; 34             ;
-;     -- 4 input functions                    ; 31             ;
-;     -- <=3 input functions                  ; 69             ;
+; Combinational ALUT usage for logic          ; 249            ;
+;     -- 7 input functions                    ; 6              ;
+;     -- 6 input functions                    ; 56             ;
+;     -- 5 input functions                    ; 30             ;
+;     -- 4 input functions                    ; 46             ;
+;     -- <=3 input functions                  ; 111            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 208            ;
+; Dedicated logic registers                   ; 249            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 64             ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -242,9 +242,9 @@ agreement for further details.
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 224            ;
-; Total fan-out                               ; 1765           ;
-; Average fan-out                             ; 3.25           ;
+; Maximum fan-out                             ; 249            ;
+; Total fan-out                               ; 2059           ;
+; Average fan-out                             ; 3.21           ;
 +---------------------------------------------+----------------+
 
 
@@ -253,15 +253,17 @@ agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                               ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------+-----------------+--------------+
-; |part5                                    ; 191 (19)            ; 208 (0)                   ; 4096              ; 0          ; 64   ; 0            ; |part5                                                                            ; part5           ; work         ;
+; |part5                                    ; 249 (19)            ; 249 (0)                   ; 4096              ; 0          ; 64   ; 0            ; |part5                                                                            ; part5           ; work         ;
 ;    |flipflop:U1|                          ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|flipflop:U1                                                                ; flipflop        ; work         ;
 ;    |flipflop:U2|                          ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|flipflop:U2                                                                ; flipflop        ; work         ;
 ;    |inst_mem:U4|                          ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |part5|inst_mem:U4                                                                ; inst_mem        ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |part5|inst_mem:U4|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;          |altsyncram_pf24:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |part5|inst_mem:U4|altsyncram:altsyncram_component|altsyncram_pf24:auto_generated ; altsyncram_pf24 ; work         ;
-;    |proc:U3|                              ; 161 (143)           ; 181 (6)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3                                                                    ; proc            ; work         ;
+;    |proc:U3|                              ; 219 (150)           ; 222 (6)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3                                                                    ; proc            ; work         ;
+;       |PSA:psa_0|                         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|PSA:psa_0                                                          ; PSA             ; work         ;
 ;       |flipflop:reg_W|                    ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|flipflop:reg_W                                                     ; flipflop        ; work         ;
 ;       |pc_count:Upc|                      ; 17 (17)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|pc_count:Upc                                                       ; pc_count        ; work         ;
+;       |prescaler:prescaler_0|             ; 29 (29)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|prescaler:prescaler_0                                              ; prescaler       ; work         ;
 ;       |regn1bit:reg_C|                    ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn1bit:reg_C                                                     ; regn1bit        ; work         ;
 ;       |regn1bit:reg_Z|                    ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn1bit:reg_Z                                                     ; regn1bit        ; work         ;
 ;       |regn:reg_0|                        ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_0                                                         ; regn            ; work         ;
@@ -269,11 +271,14 @@ agreement for further details.
 ;       |regn:reg_2|                        ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_2                                                         ; regn            ; work         ;
 ;       |regn:reg_3|                        ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_3                                                         ; regn            ; work         ;
 ;       |regn:reg_4|                        ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_4                                                         ; regn            ; work         ;
+;       |regn:reg_5|                        ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_5                                                         ; regn            ; work         ;
 ;       |regn:reg_ADDR|                     ; 0 (0)               ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_ADDR                                                      ; regn            ; work         ;
 ;       |regn:reg_A|                        ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_A                                                         ; regn            ; work         ;
 ;       |regn:reg_DOUT|                     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_DOUT                                                      ; regn            ; work         ;
 ;       |regn:reg_G|                        ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_G                                                         ; regn            ; work         ;
 ;       |regn:reg_IR|                       ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_IR                                                        ; regn            ; work         ;
+;       |regntimer:reg_6|                   ; 0 (0)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regntimer:reg_6                                                    ; regntimer       ; work         ;
+;       |timer:timer_0|                     ; 21 (21)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|timer:timer_0                                                      ; timer           ; work         ;
 ;    |regn:U5|                              ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|regn:U5                                                                    ; regn            ; work         ;
 ;    |regn:U6|                              ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|regn:U6                                                                    ; regn            ; work         ;
 ;    |seg7:U7|                              ; 9 (1)               ; 7 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|seg7:U7                                                                    ; seg7            ; work         ;
@@ -318,73 +323,53 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+---------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                    ;
-+----------------------------------------------+----------------------------------------+
-; Register name                                ; Reason for Removal                     ;
-+----------------------------------------------+----------------------------------------+
-; proc:U3|timer:timer_0|sortie[1..15]          ; Stuck at GND due to stuck port data_in ;
-; proc:U3|regn:reg_5|Q[1..15]                  ; Stuck at GND due to stuck port data_in ;
-; proc:U3|regn:reg_5|Q[0]                      ; Stuck at VCC due to stuck port data_in ;
-; proc:U3|timer:timer_0|sortie[0]              ; Lost fanout                            ;
-; proc:U3|regntimer:reg_6|Q[4]                 ; Lost fanout                            ;
-; proc:U3|timer:timer_0|s_count[0..15]         ; Lost fanout                            ;
-; proc:U3|regntimer:reg_6|Q[5]                 ; Lost fanout                            ;
-; proc:U3|prescaler:prescaler_0|s_clkout       ; Lost fanout                            ;
-; proc:U3|regntimer:reg_6|Q[0..3]              ; Lost fanout                            ;
-; proc:U3|prescaler:prescaler_0|s_count[0..15] ; Lost fanout                            ;
-; Total Number of Removed Registers = 71       ;                                        ;
-+----------------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; proc:U3|timer:timer_0|sortie[1..15]    ; Stuck at GND due to stuck port data_in ;
+; proc:U3|regn:reg_5|Q[1..15]            ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 30 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                            ;
-+----------------------------------+---------------------------+-------------------------------------------------------------------------+
-; Register name                    ; Reason for Removal        ; Registers Removed due to This Register                                  ;
-+----------------------------------+---------------------------+-------------------------------------------------------------------------+
-; proc:U3|timer:timer_0|sortie[1]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[1], proc:U3|timer:timer_0|sortie[0],               ;
-;                                  ; due to stuck port data_in ; proc:U3|regntimer:reg_6|Q[5], proc:U3|prescaler:prescaler_0|s_clkout,   ;
-;                                  ;                           ; proc:U3|regntimer:reg_6|Q[3], proc:U3|prescaler:prescaler_0|s_count[8], ;
-;                                  ;                           ; proc:U3|prescaler:prescaler_0|s_count[9],                               ;
-;                                  ;                           ; proc:U3|prescaler:prescaler_0|s_count[10],                              ;
-;                                  ;                           ; proc:U3|prescaler:prescaler_0|s_count[11],                              ;
-;                                  ;                           ; proc:U3|prescaler:prescaler_0|s_count[12],                              ;
-;                                  ;                           ; proc:U3|prescaler:prescaler_0|s_count[13],                              ;
-;                                  ;                           ; proc:U3|prescaler:prescaler_0|s_count[14],                              ;
-;                                  ;                           ; proc:U3|prescaler:prescaler_0|s_count[15]                               ;
-; proc:U3|timer:timer_0|s_count[2] ; Lost Fanouts              ; proc:U3|timer:timer_0|s_count[8], proc:U3|timer:timer_0|s_count[9],     ;
-;                                  ;                           ; proc:U3|timer:timer_0|s_count[10], proc:U3|timer:timer_0|s_count[11],   ;
-;                                  ;                           ; proc:U3|timer:timer_0|s_count[12], proc:U3|timer:timer_0|s_count[13],   ;
-;                                  ;                           ; proc:U3|timer:timer_0|s_count[14], proc:U3|timer:timer_0|s_count[15]    ;
-; proc:U3|timer:timer_0|sortie[2]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[2]                                                 ;
-;                                  ; due to stuck port data_in ;                                                                         ;
-; proc:U3|timer:timer_0|sortie[3]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[3]                                                 ;
-;                                  ; due to stuck port data_in ;                                                                         ;
-; proc:U3|timer:timer_0|sortie[4]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[4]                                                 ;
-;                                  ; due to stuck port data_in ;                                                                         ;
-; proc:U3|timer:timer_0|sortie[5]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[5]                                                 ;
-;                                  ; due to stuck port data_in ;                                                                         ;
-; proc:U3|timer:timer_0|sortie[6]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[6]                                                 ;
-;                                  ; due to stuck port data_in ;                                                                         ;
-; proc:U3|timer:timer_0|sortie[7]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[7]                                                 ;
-;                                  ; due to stuck port data_in ;                                                                         ;
-; proc:U3|timer:timer_0|sortie[8]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[8]                                                 ;
-;                                  ; due to stuck port data_in ;                                                                         ;
-; proc:U3|timer:timer_0|sortie[9]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[9]                                                 ;
-;                                  ; due to stuck port data_in ;                                                                         ;
-; proc:U3|timer:timer_0|sortie[10] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[10]                                                ;
-;                                  ; due to stuck port data_in ;                                                                         ;
-; proc:U3|timer:timer_0|sortie[11] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[11]                                                ;
-;                                  ; due to stuck port data_in ;                                                                         ;
-; proc:U3|timer:timer_0|sortie[12] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[12]                                                ;
-;                                  ; due to stuck port data_in ;                                                                         ;
-; proc:U3|timer:timer_0|sortie[13] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[13]                                                ;
-;                                  ; due to stuck port data_in ;                                                                         ;
-; proc:U3|timer:timer_0|sortie[14] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[14]                                                ;
-;                                  ; due to stuck port data_in ;                                                                         ;
-; proc:U3|timer:timer_0|sortie[15] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[15]                                                ;
-;                                  ; due to stuck port data_in ;                                                                         ;
-+----------------------------------+---------------------------+-------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                           ;
++----------------------------------+---------------------------+----------------------------------------+
+; Register name                    ; Reason for Removal        ; Registers Removed due to This Register ;
++----------------------------------+---------------------------+----------------------------------------+
+; proc:U3|timer:timer_0|sortie[1]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[1]                ;
+;                                  ; due to stuck port data_in ;                                        ;
+; proc:U3|timer:timer_0|sortie[2]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[2]                ;
+;                                  ; due to stuck port data_in ;                                        ;
+; proc:U3|timer:timer_0|sortie[3]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[3]                ;
+;                                  ; due to stuck port data_in ;                                        ;
+; proc:U3|timer:timer_0|sortie[4]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[4]                ;
+;                                  ; due to stuck port data_in ;                                        ;
+; proc:U3|timer:timer_0|sortie[5]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[5]                ;
+;                                  ; due to stuck port data_in ;                                        ;
+; proc:U3|timer:timer_0|sortie[6]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[6]                ;
+;                                  ; due to stuck port data_in ;                                        ;
+; proc:U3|timer:timer_0|sortie[7]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[7]                ;
+;                                  ; due to stuck port data_in ;                                        ;
+; proc:U3|timer:timer_0|sortie[8]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[8]                ;
+;                                  ; due to stuck port data_in ;                                        ;
+; proc:U3|timer:timer_0|sortie[9]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[9]                ;
+;                                  ; due to stuck port data_in ;                                        ;
+; proc:U3|timer:timer_0|sortie[10] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[10]               ;
+;                                  ; due to stuck port data_in ;                                        ;
+; proc:U3|timer:timer_0|sortie[11] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[11]               ;
+;                                  ; due to stuck port data_in ;                                        ;
+; proc:U3|timer:timer_0|sortie[12] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[12]               ;
+;                                  ; due to stuck port data_in ;                                        ;
+; proc:U3|timer:timer_0|sortie[13] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[13]               ;
+;                                  ; due to stuck port data_in ;                                        ;
+; proc:U3|timer:timer_0|sortie[14] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[14]               ;
+;                                  ; due to stuck port data_in ;                                        ;
+; proc:U3|timer:timer_0|sortie[15] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[15]               ;
+;                                  ; due to stuck port data_in ;                                        ;
++----------------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -392,12 +377,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 208   ;
-; Number of registers using Synchronous Clear  ; 16    ;
+; Total registers                              ; 249   ;
+; Number of registers using Synchronous Clear  ; 48    ;
 ; Number of registers using Synchronous Load   ; 32    ;
 ; Number of registers using Asynchronous Clear ; 6     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 190   ;
+; Number of registers using Clock Enable       ; 214   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -697,31 +682,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 208                         ;
+; arriav_ff             ; 249                         ;
 ;     CLR               ; 6                           ;
-;     ENA               ; 158                         ;
+;     ENA               ; 166                         ;
+;     ENA SCLR          ; 16                          ;
 ;     ENA SCLR SLD      ; 16                          ;
 ;     ENA SLD           ; 16                          ;
-;     plain             ; 12                          ;
-; arriav_lcell_comb     ; 192                         ;
-;     arith             ; 34                          ;
-;         1 data inputs ; 16                          ;
+;     SCLR              ; 16                          ;
+;     plain             ; 13                          ;
+; arriav_lcell_comb     ; 250                         ;
+;     arith             ; 66                          ;
+;         1 data inputs ; 48                          ;
 ;         2 data inputs ; 2                           ;
 ;         4 data inputs ; 16                          ;
-;     extend            ; 5                           ;
-;         7 data inputs ; 5                           ;
-;     normal            ; 153                         ;
+;     extend            ; 6                           ;
+;         7 data inputs ; 6                           ;
+;     normal            ; 178                         ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 30                          ;
-;         3 data inputs ; 21                          ;
-;         4 data inputs ; 15                          ;
-;         5 data inputs ; 34                          ;
-;         6 data inputs ; 52                          ;
+;         2 data inputs ; 36                          ;
+;         3 data inputs ; 25                          ;
+;         4 data inputs ; 30                          ;
+;         5 data inputs ; 30                          ;
+;         6 data inputs ; 56                          ;
 ; boundary_port         ; 64                          ;
 ; stratixv_ram_block    ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.10                       ;
-; Average LUT depth     ; 5.82                        ;
+; Average LUT depth     ; 5.11                        ;
 +-----------------------+-----------------------------+
 
 
@@ -740,7 +727,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Fri Apr 10 19:44:53 2020
+    Info: Processing started: Fri Apr 10 11:10:59 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part5 -c part5
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -852,8 +839,6 @@ Info (12133): Instantiated megafunction "inst_mem:U4|altsyncram:altsyncram_compo
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_pf24.tdf
     Info (12023): Found entity 1: altsyncram_pf24 File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/db/altsyncram_pf24.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_pf24" for hierarchy "inst_mem:U4|altsyncram:altsyncram_component|altsyncram_pf24:auto_generated" File: d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113028): 248 out of 256 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.mif Line: 1
-    Warning (113027): Addresses ranging from 8 to 255 are not initialized File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.mif Line: 1
 Info (12128): Elaborating entity "regn" for hierarchy "regn:U5" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 81
 Warning (12125): Using design file seg7.vhd, which is not specified as a design file for the current project, but contains definitions for 4 design units and 2 entities in project
     Info (12022): Found design unit 1: seg7-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd Line: 12
@@ -906,18 +891,17 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
     Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 40 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 422 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 486 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 342 logic cells
+    Info (21061): Implemented 406 logic cells
     Info (21064): Implemented 16 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 4873 megabytes
-    Info: Processing ended: Fri Apr 10 19:45:07 2020
-    Info: Elapsed time: 00:00:14
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 57 warnings
+    Info: Peak virtual memory: 4872 megabytes
+    Info: Processing ended: Fri Apr 10 11:11:12 2020
+    Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:29
 
 

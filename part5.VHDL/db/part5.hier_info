@@ -129,6 +129,7 @@ Clock => regn:reg_1.Clock
 Clock => regn:reg_2.Clock
 Clock => regn:reg_3.Clock
 Clock => regn:reg_4.Clock
+Clock => regn:reg_5.Rin
 Clock => regn:reg_5.Clock
 Clock => regntimer:reg_6.Clock
 Clock => pc_count:Upc.Clock
