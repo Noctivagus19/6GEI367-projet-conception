@@ -319,11 +319,11 @@ BEGIN
     reg_4:  regn PORT MAP (BusWires, Rin(4), Clock, R4);
 	 
     reg_5:  regn PORT MAP (timer_out, timer_out(0), Clock, R5);
-    --reg_6:  regn PORT MAP (BusWires, Rin(6), Clock, R6);
+    
 	 
 	 reg_6:  regntimer PORT MAP (BusWires, Rin(6), Clock, timer_config);
 
-    -- pc_count(R, Resetn, Clock, E, L, Q);
+   
     Upc: pc_count PORT MAP (BusWires, Resetn, Clock, pc_inc, Rin(7), PC);
 
     reg_A: regn PORT MAP (BusWires, Ain, Clock, A);
