@@ -29,7 +29,6 @@ ARCHITECTURE Behavior OF proc IS
                Q           : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0));
     END COMPONENT;
 	 COMPONENT regn1bit
-        --GENERIC ( n : INTEGER := 16);
         PORT ( R           : IN STD_LOGIC;
                Rin, Clock  : IN STD_LOGIC;
                Q           : OUT STD_LOGIC);
@@ -89,16 +88,10 @@ ARCHITECTURE Behavior OF proc IS
              -- Sel_D is immediate data, Sel_D8 is immediate data << 8
 				 
 	SIGNAL timer_config : STD_LOGIC_VECTOR(15 DOWNTO 0 ); --Changer en signal et brancher dans la sortie de R6 (entree R? devient buswires)
-	SIGNAL regntimer_out : STD_LOGIC_VECTOR(15 DOWNTO 0); --Inactif
 	SIGNAL timer_out : STD_LOGIC_VECTOR(15 DOWNTO 0);
-	SIGNAL prescale_factor : STD_LOGIC_VECTOR(2 DOWNTO 0) := timer_config(2 DOWNTO 0);
 	SIGNAL prescaler_out : STD_LOGIC;
-	SIGNAL psa_select: STD_LOGIC := timer_config(3);
 	SIGNAL psa_out: STD_LOGIC;
-	SIGNAL interrupt_flag : STD_LOGIC;
-	SIGNAL timer_on : STD_LOGIC := timer_config(5);
-	SIGNAL timer_select_8_16: STD_LOGIC := timer_config(4);
-	
+
     CONSTANT Sel_DIN : STD_LOGIC_VECTOR(3 DOWNTO 0) := "1011";
     SIGNAL Sel : STD_LOGIC_VECTOR(3 DOWNTO 0); -- bus selector
     SIGNAL Rin : STD_LOGIC_VECTOR(0 TO 7);
@@ -319,11 +312,11 @@ BEGIN
     reg_4:  regn PORT MAP (BusWires, Rin(4), Clock, R4);
 	 
     reg_5:  regn PORT MAP (timer_out, timer_out(0), Clock, R5);
-    --reg_6:  regn PORT MAP (BusWires, Rin(6), Clock, R6);
+
 	 
 	 reg_6:  regntimer PORT MAP (BusWires, Rin(6), Clock, timer_config);
 
-    -- pc_count(R, Resetn, Clock, E, L, Q);
+   
     Upc: pc_count PORT MAP (BusWires, Resetn, Clock, pc_inc, Rin(7), PC);
 
     reg_A: regn PORT MAP (BusWires, Ain, Clock, A);
@@ -335,7 +328,7 @@ BEGIN
     
 	 prescaler_0 : prescaler PORT MAP(clock, timer_config(2 DOWNTO 0), prescaler_out);
 	 psa_0: PSA PORT MAP(prescaler_out, clock, timer_config(3), psa_out);
-	 --timer_0: timer PORT MAP(psa_out, timer_on, timer_select_8_16, interrupt_flag);
+	
 	 
 	 timer_0: timer PORT MAP(psa_out, timer_config(5), timer_config(4), timer_out);
 	 
@@ -571,7 +564,6 @@ BEGIN
             s_count <= s_count + 1;
         ELSE
             s_count <= (OTHERS => '0');
-				--s_count <= "0000000000000000";
         END IF;
 		  
 		  
@@ -603,7 +595,6 @@ END timer;
 ARCHITECTURE rtl OF timer IS
 SIGNAL s_count : STD_LOGIC_VECTOR(15 DOWNTO 0) := "0000000000000000";
 SIGNAL s_count_check : STD_LOGIC_VECTOR(15 DOWNTO 0);
---SIGNAL init_timer: STD_LOGIC;
 
 BEGIN
 	PROCESS (clk)
@@ -612,37 +603,31 @@ BEGIN
 	
 	--Compteur 8 et 16 bits
 	
-	--CASE selecteur8_16 IS
-	--	WHEN '0' => s_count_check <="1111111111111111"; --compteur 16 bits
-	--	WHEN '1' => s_count_check <="0000000011111111"; --compteur 8 bits
-	--	WHEN OTHERS => s_count_check <="1111111111111111";
-	--END CASE;
-	
-	--Compteur de test: 2 et 3 bits
-	
 	CASE selecteur8_16 IS
-		WHEN '0' => s_count_check <="0000000000000011";
-		WHEN '1' => s_count_check <="0000000000000111";
+		WHEN '0' => s_count_check <="1111111111111111"; --compteur 16 bits
+		WHEN '1' => s_count_check <="0000000011111111"; --compteur 8 bits
 		WHEN OTHERS => s_count_check <="1111111111111111";
 	END CASE;
 	
+
+	
 		IF clk'EVENT AND clk = '1' AND timer_on = '1' THEN
-			--s_count <= s_count + 1;
+
 				IF s_count < s_count_check THEN
-					--sortie <= '0';
+					
 					sortie <= "0000000000000000";
 				ELSE
-					--sortie <= '1';
+					
 					sortie <= "0000000000000001";
-					--s_count <= "0000000000000000"; --Remise du timer à 0 non spécifiée dans le lab
+					
 				END IF;
 				
-				--IF s_count  < (s_count_check + s_count_check) THEN
-				IF s_count  < (s_count_check + s_count_check) THEN -- Un seul pulse d'interrupt pour ne pas bloquer le bus
+				
+				IF s_count  < (s_count_check) THEN 
             s_count <= s_count + 1;
 				ELSE
             s_count <= (OTHERS => '0');
-				--s_count <= "0000000000000000";
+				
 				END IF;
 				
 		END IF;
