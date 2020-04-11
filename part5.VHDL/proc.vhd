@@ -28,19 +28,18 @@ ARCHITECTURE Behavior OF proc IS
                Rin, Clock  : IN STD_LOGIC;
                Q           : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0));
     END COMPONENT;
-	 COMPONENT regn1bit
-        --GENERIC ( n : INTEGER := 16);
+	 COMPONENT registre_1bit
         PORT ( R           : IN STD_LOGIC;
                Rin, Clock  : IN STD_LOGIC;
                Q           : OUT STD_LOGIC);
     END COMPONENT;
-	 COMPONENT regntimer 
+	 COMPONENT registre_timer 
     GENERIC ( n : INTEGER := 16);
     PORT ( R           : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
            Rin, Clock  : IN  STD_LOGIC;
            Q           : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0));
 	END COMPONENT;
-	COMPONENT PSA 
+	COMPONENT psa 
 	PORT (D0, D1 : IN STD_LOGIC;
 			SEL : IN STD_LOGIC;
 			MX_OUT : OUT STD_LOGIC);
@@ -89,13 +88,11 @@ ARCHITECTURE Behavior OF proc IS
              -- Sel_D is immediate data, Sel_D8 is immediate data << 8
 				 
 	SIGNAL timer_config : STD_LOGIC_VECTOR(15 DOWNTO 0 ); --Changer en signal et brancher dans la sortie de R6 (entree R? devient buswires)
-	SIGNAL regntimer_out : STD_LOGIC_VECTOR(15 DOWNTO 0); --Inactif
 	SIGNAL timer_out : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	SIGNAL prescale_factor : STD_LOGIC_VECTOR(2 DOWNTO 0) := timer_config(2 DOWNTO 0);
 	SIGNAL prescaler_out : STD_LOGIC;
 	SIGNAL psa_select: STD_LOGIC := timer_config(3);
 	SIGNAL psa_out: STD_LOGIC;
-	SIGNAL interrupt_flag : STD_LOGIC;
 	SIGNAL timer_on : STD_LOGIC := timer_config(5);
 	SIGNAL timer_select_8_16: STD_LOGIC := timer_config(4);
 	
@@ -224,7 +221,6 @@ BEGIN
 								Sel <= Sel_D8;
 								Rin <= Xreg;
 								Done <= '1';
-								--pc_inc <= '1'; --Why ?****************************************************
 								
                     WHEN add | sub | and_it =>
                         -- ... your code goes here
@@ -317,26 +313,17 @@ BEGIN
     reg_2:  regn PORT MAP (BusWires, Rin(2), Clock, R2);
     reg_3:  regn PORT MAP (BusWires, Rin(3), Clock, R3);
     reg_4:  regn PORT MAP (BusWires, Rin(4), Clock, R4);
-	 
-    reg_5:  regn PORT MAP (timer_out, timer_out(0), Clock, R5);
-    
-	 
-	 reg_6:  regntimer PORT MAP (BusWires, Rin(6), Clock, timer_config);
-
-   
+    reg_interrup:  regn PORT MAP (timer_out, timer_out(0), Clock, R5); --REGISTRE CONTENANT LE FLAG D'INTERRUPTION
+	 reg_6:  registre_timer PORT MAP (BusWires, Rin(6), Clock, timer_config);
     Upc: pc_count PORT MAP (BusWires, Resetn, Clock, pc_inc, Rin(7), PC);
-
     reg_A: regn PORT MAP (BusWires, Ain, Clock, A);
     reg_ADDR: regn PORT MAP (BusWires, ADDRin, Clock, ADDR);
     reg_DOUT: regn PORT MAP (BusWires, DOUTin, Clock, DOUT);
     reg_IR: regn PORT MAP (DIN, IRin, Clock, IR);
-
     reg_W: flipflop PORT MAP (W_D, Resetn, Clock, W);
     
 	 prescaler_0 : prescaler PORT MAP(clock, timer_config(2 DOWNTO 0), prescaler_out);
-	 psa_0: PSA PORT MAP(prescaler_out, clock, timer_config(3), psa_out);
-	 --timer_0: timer PORT MAP(psa_out, timer_on, timer_select_8_16, interrupt_flag);
-	 
+	 psa_0: psa PORT MAP(prescaler_out, clock, timer_config(3), psa_out);
 	 timer_0: timer PORT MAP(psa_out, timer_config(5), timer_config(4), timer_out);
 	 
 	 
@@ -365,19 +352,15 @@ BEGIN
 				Sum <= SumCarry(15 DOWNTO 0);
         ELSE
             Sum <= A AND BusWires;
-        END IF;
-		  
-		  
-		  
-		  
+        END IF;	 	  
     END PROCESS;
 
-    reg_G: regn PORT MAP (Sum, Gin, Clock, G);
 	 
-	 reg_C: regn1bit PORT MAP (flag_c, Gin, Clock, c);
-	 reg_Z: regn1bit PORT MAP (flag_z, Gin, Clock, z);
-
+    reg_G: regn PORT MAP (Sum, Gin, Clock, G);
+	 reg_C: registre_1bit PORT MAP (flag_c, Gin, Clock, c);
+	 reg_Z: registre_1bit PORT MAP (flag_z, Gin, Clock, z);
     busmux: PROCESS (Sel, R0, R1, R2, R3, R4, R5, R6, PC, G, IR, DIN)
+	 
     BEGIN
         CASE Sel IS
             WHEN Sel_R0 => BusWires <= R0;
@@ -397,274 +380,6 @@ BEGIN
     END PROCESS;   
 END Behavior;
 
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-USE ieee.std_logic_unsigned.all;
-
-ENTITY pc_count IS
-   PORT ( R   : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
-          Resetn, Clock, E, L  : IN  STD_LOGIC;
-          Q   : OUT STD_LOGIC_VECTOR(15 DOWNTO 0));
-END pc_count;
-
-ARCHITECTURE Behavior OF pc_count IS
-   SIGNAL Count : STD_LOGIC_VECTOR(15 DOWNTO 0);
-BEGIN
-   PROCESS (Clock)
-   BEGIN
-      IF (Clock'EVENT AND Clock = '1') THEN
-          IF (Resetn = '0') THEN
-            Count <= (OTHERS => '0');
-         ELSIF (L = '1') THEN 
-            Count <= R;
-         ELSIF (E = '1') THEN 
-            Count <= Count + 1;
-         END IF;
-      END IF;
-   END PROCESS;
-   Q <= Count;
-END Behavior;
-
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-
-ENTITY dec3to8 IS
-    PORT ( W   : IN   STD_LOGIC_VECTOR(2 DOWNTO 0);
-           Y   : OUT  STD_LOGIC_VECTOR(0 TO 7));
-END dec3to8;
-
-ARCHITECTURE Behavior OF dec3to8 IS
-BEGIN
-    PROCESS (W)
-    BEGIN
-        CASE W IS
-            WHEN "000" => Y <= "10000000";
-            WHEN "001" => Y <= "01000000";
-            WHEN "010" => Y <= "00100000";
-            WHEN "011" => Y <= "00010000";
-            WHEN "100" => Y <= "00001000";
-            WHEN "101" => Y <= "00000100";
-            WHEN "110" => Y <= "00000010";
-            WHEN "111" => Y <= "00000001";
-            WHEN OTHERS => Y <= "00000000";
-        END CASE;
-    END PROCESS;
-END Behavior;
-
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-
-ENTITY regn IS
-    GENERIC ( n : INTEGER := 16);
-    PORT ( R           : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-           Rin, Clock  : IN  STD_LOGIC;
-           Q           : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0));
-END regn;
-
-
-ARCHITECTURE Behavior OF regn IS
-BEGIN
-    PROCESS (Clock)
-    BEGIN
-        IF Clock'EVENT AND Clock = '1' THEN
-            IF Rin = '1' THEN
-                Q <= R;
-            END IF;
-        END IF;
-    END PROCESS;
-END Behavior;
-
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-
-ENTITY regn1bit IS
-    PORT ( R           : IN  STD_LOGIC;
-           Rin, Clock  : IN  STD_LOGIC;
-           Q           : OUT STD_LOGIC);
-END regn1bit;
-
-ARCHITECTURE Behavior OF regn1bit IS
-BEGIN
-    PROCESS (Clock)
-    BEGIN
-        IF Clock'EVENT AND Clock = '1' THEN
-            IF Rin = '1' THEN
-                Q <= R;
-            END IF;
-        END IF;
-    END PROCESS;
-END Behavior;
-
---********************************************************* Projet
-
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-
-ENTITY regntimer IS
-    GENERIC ( n : INTEGER := 16);
-    PORT ( R           : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);
-           Rin, Clock  : IN  STD_LOGIC;
-           Q           : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0));
-END regntimer;
-
-
-ARCHITECTURE Behavior OF regntimer IS
-BEGIN
-    PROCESS (Clock)
-    BEGIN
-        IF Clock'EVENT AND Clock = '1' THEN
-            IF Rin = '1' THEN
-                Q <= R;
-            END IF;
-        END IF;
-    END PROCESS;
-END Behavior;
 
 
 
-
-LIBRARY IEEE;
-
-USE IEEE.STD_LOGIC_1164.ALL;
-USE IEEE.STD_LOGIC_UNSIGNED.ALL;
-
-ENTITY prescaler IS
-    PORT (
-          clk    : IN  STD_LOGIC;
-			 prescale : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-          clkout : OUT STD_LOGIC
-         );
-END prescaler;
-
-ARCHITECTURE rtl OF prescaler IS
-
-SIGNAL s_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL s_clkout : STD_LOGIC;
-
-BEGIN
-
-PROCESS (clk)
-VARIABLE s_count_check : STD_LOGIC_VECTOR(7 DOWNTO 0);
-
-BEGIN
-
-	CASE prescale IS
-		WHEN "000" => s_count_check :="00000001";
-		WHEN "001" => s_count_check :="00000011";
-		WHEN "010" => s_count_check :="00000111";
-		WHEN "011" => s_count_check :="00001111";
-		WHEN "100" => s_count_check :="00011111";
-		WHEN "101" => s_count_check :="00111111";
-		WHEN "110" => s_count_check :="01111111";
-		WHEN "111" => s_count_check :="11111111";
-		WHEN OTHERS => s_count_check :="00000001";
-	END CASE;
-
-    IF clk'EVENT AND clk = '1' THEN
-         IF s_count <= s_count_check THEN
-            s_clkout <= '0';
-        ELSE
-            s_clkout <= '1';        
-        END IF;
-		  
-        IF s_count  <= (s_count_check+s_count_check) THEN
-            s_count <= s_count + 1;
-        ELSE
-            s_count <= (OTHERS => '0');
-				--s_count <= "0000000000000000";
-        END IF;
-		  
-		  
-    END IF;
-END PROCESS;
-
-clkout <= s_clkout;
-
-END;
-
-
-
-
-LIBRARY IEEE;
-USE IEEE.STD_LOGIC_1164.ALL;
-USE IEEE.STD_LOGIC_UNSIGNED.ALL; 
-
-
-ENTITY timer IS
- PORT (
- clk: IN STD_LOGIC;
- timer_on : IN STD_LOGIC;
- selecteur8_16: IN STD_LOGIC; 
- sortie: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
- );
-END timer; 
-
-
-ARCHITECTURE rtl OF timer IS
-SIGNAL s_count : STD_LOGIC_VECTOR(15 DOWNTO 0) := "0000000000000000";
-SIGNAL s_count_check : STD_LOGIC_VECTOR(15 DOWNTO 0);
---SIGNAL init_timer: STD_LOGIC;
-
-BEGIN
-	PROCESS (clk)
-
-	BEGIN
-	
-	--Compteur 8 et 16 bits
-	
-	--CASE selecteur8_16 IS
-	--	WHEN '0' => s_count_check <="1111111111111111"; --compteur 16 bits
-	--	WHEN '1' => s_count_check <="0000000011111111"; --compteur 8 bits
-	--	WHEN OTHERS => s_count_check <="1111111111111111";
-	--END CASE;
-	
-	--Compteur de test: 2 et 3 bits
-	
-	CASE selecteur8_16 IS
-		WHEN '0' => s_count_check <="0000000000000011";
-		WHEN '1' => s_count_check <="0000000000000111";
-		WHEN OTHERS => s_count_check <="1111111111111111";
-	END CASE;
-	
-		IF clk'EVENT AND clk = '1' AND timer_on = '1' THEN
-			--s_count <= s_count + 1;
-				IF s_count < s_count_check THEN
-					--sortie <= '0';
-					sortie <= "0000000000000000";
-				ELSE
-					--sortie <= '1';
-					sortie <= "0000000000000001";
-					--s_count <= "0000000000000000"; --Remise du timer à 0 non spécifiée dans le lab
-				END IF;
-				
-				--IF s_count  < (s_count_check + s_count_check) THEN
-				IF s_count  < (s_count_check + s_count_check) THEN -- Un seul pulse d'interrupt pour ne pas bloquer le bus
-            s_count <= s_count + 1;
-				ELSE
-            s_count <= (OTHERS => '0');
-				--s_count <= "0000000000000000";
-				END IF;
-				
-		END IF;
-	END PROCESS;
-END; 
-
-
-LIBRARY IEEE;
-USE IEEE.STD_LOGIC_1164.ALL;
-USE IEEE.STD_LOGIC_UNSIGNED.ALL; 
-
-
-ENTITY PSA IS
-	PORT (D0, D1 : IN STD_LOGIC;
-			SEL : IN STD_LOGIC;
-			MX_OUT : OUT STD_LOGIC);
-END PSA;
-
-ARCHITECTURE rtl OF PSA IS
-BEGIN
-	WITH SEL select
-		MX_OUT <= D0 WHEN '0',
-				D1 WHEN '1',
-				'0' WHEN OTHERS;
-END rtl;

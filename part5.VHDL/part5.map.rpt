@@ -1,5 +1,5 @@
 Analysis & Synthesis report for part5
-Fri Apr 10 11:11:12 2020
+Fri Apr 10 21:47:43 2020
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -26,8 +26,8 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
  18. Parameter Settings for User Entity Instance: proc:U3|regn:reg_2
  19. Parameter Settings for User Entity Instance: proc:U3|regn:reg_3
  20. Parameter Settings for User Entity Instance: proc:U3|regn:reg_4
- 21. Parameter Settings for User Entity Instance: proc:U3|regn:reg_5
- 22. Parameter Settings for User Entity Instance: proc:U3|regntimer:reg_6
+ 21. Parameter Settings for User Entity Instance: proc:U3|regn:reg_interrup
+ 22. Parameter Settings for User Entity Instance: proc:U3|registre_timer:reg_6
  23. Parameter Settings for User Entity Instance: proc:U3|regn:reg_A
  24. Parameter Settings for User Entity Instance: proc:U3|regn:reg_ADDR
  25. Parameter Settings for User Entity Instance: proc:U3|regn:reg_DOUT
@@ -39,7 +39,7 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
  31. Parameter Settings for User Entity Instance: seg7:U7|regne:reg_R0
  32. altsyncram Parameter Settings by Entity Instance
  33. Port Connectivity Checks: "regn:U6"
- 34. Port Connectivity Checks: "proc:U3|regntimer:reg_6"
+ 34. Port Connectivity Checks: "proc:U3|registre_timer:reg_6"
  35. Port Connectivity Checks: "proc:U3|dec3to8:decX"
  36. Port Connectivity Checks: "proc:U3"
  37. Post-Synthesis Netlist Statistics for Top Partition
@@ -71,13 +71,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Apr 10 11:11:12 2020       ;
+; Analysis & Synthesis Status     ; Successful - Fri Apr 10 21:47:43 2020       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; part5                                       ;
 ; Top-level Entity Name           ; part5                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 249                                         ;
+; Total registers                 ; 208                                         ;
 ; Total pins                      ; 64                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 4,096                                       ;
@@ -202,6 +202,14 @@ agreement for further details.
 +----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------+---------+
 ; part5.vhd                        ; yes             ; User VHDL File                         ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd              ;         ;
 ; proc.vhd                         ; yes             ; User VHDL File                         ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd               ;         ;
+; pc_count.vhd                     ; yes             ; User VHDL File                         ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/pc_count.vhd           ;         ;
+; dec3to8.vhd                      ; yes             ; User VHDL File                         ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/dec3to8.vhd            ;         ;
+; regn.vhd                         ; yes             ; User VHDL File                         ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/regn.vhd               ;         ;
+; registre_1bit.vhd                ; yes             ; User VHDL File                         ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/registre_1bit.vhd      ;         ;
+; registre_timer.vhd               ; yes             ; User VHDL File                         ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/registre_timer.vhd     ;         ;
+; prescaler.vhd                    ; yes             ; User VHDL File                         ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/prescaler.vhd          ;         ;
+; timer.vhd                        ; yes             ; User VHDL File                         ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/timer.vhd              ;         ;
+; psa.vhd                          ; yes             ; User VHDL File                         ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/psa.vhd                ;         ;
 ; flipflop.vhd                     ; yes             ; Auto-Found VHDL File                   ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/flipflop.vhd           ;         ;
 ; inst_mem.vhd                     ; yes             ; Auto-Found Wizard-Generated File       ; C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd           ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                           ; d:/prgm files/intelfpga_lite/16.1/quartus/libraries/megafunctions/altsyncram.tdf             ;         ;
@@ -224,16 +232,16 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 173            ;
+; Estimate of Logic utilization (ALMs needed) ; 147            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 249            ;
-;     -- 7 input functions                    ; 6              ;
-;     -- 6 input functions                    ; 56             ;
-;     -- 5 input functions                    ; 30             ;
-;     -- 4 input functions                    ; 46             ;
-;     -- <=3 input functions                  ; 111            ;
+; Combinational ALUT usage for logic          ; 191            ;
+;     -- 7 input functions                    ; 5              ;
+;     -- 6 input functions                    ; 52             ;
+;     -- 5 input functions                    ; 34             ;
+;     -- 4 input functions                    ; 31             ;
+;     -- <=3 input functions                  ; 69             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 249            ;
+; Dedicated logic registers                   ; 208            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 64             ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -242,9 +250,9 @@ agreement for further details.
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 249            ;
-; Total fan-out                               ; 2059           ;
-; Average fan-out                             ; 3.21           ;
+; Maximum fan-out                             ; 224            ;
+; Total fan-out                               ; 1765           ;
+; Average fan-out                             ; 3.25           ;
 +---------------------------------------------+----------------+
 
 
@@ -253,32 +261,27 @@ agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                               ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------+-----------------+--------------+
-; |part5                                    ; 249 (19)            ; 249 (0)                   ; 4096              ; 0          ; 64   ; 0            ; |part5                                                                            ; part5           ; work         ;
+; |part5                                    ; 191 (19)            ; 208 (0)                   ; 4096              ; 0          ; 64   ; 0            ; |part5                                                                            ; part5           ; work         ;
 ;    |flipflop:U1|                          ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|flipflop:U1                                                                ; flipflop        ; work         ;
 ;    |flipflop:U2|                          ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|flipflop:U2                                                                ; flipflop        ; work         ;
 ;    |inst_mem:U4|                          ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |part5|inst_mem:U4                                                                ; inst_mem        ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |part5|inst_mem:U4|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;          |altsyncram_pf24:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |part5|inst_mem:U4|altsyncram:altsyncram_component|altsyncram_pf24:auto_generated ; altsyncram_pf24 ; work         ;
-;    |proc:U3|                              ; 219 (150)           ; 222 (6)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3                                                                    ; proc            ; work         ;
-;       |PSA:psa_0|                         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|PSA:psa_0                                                          ; PSA             ; work         ;
+;    |proc:U3|                              ; 161 (143)           ; 181 (6)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3                                                                    ; proc            ; work         ;
 ;       |flipflop:reg_W|                    ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|flipflop:reg_W                                                     ; flipflop        ; work         ;
 ;       |pc_count:Upc|                      ; 17 (17)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|pc_count:Upc                                                       ; pc_count        ; work         ;
-;       |prescaler:prescaler_0|             ; 29 (29)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|prescaler:prescaler_0                                              ; prescaler       ; work         ;
-;       |regn1bit:reg_C|                    ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn1bit:reg_C                                                     ; regn1bit        ; work         ;
-;       |regn1bit:reg_Z|                    ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn1bit:reg_Z                                                     ; regn1bit        ; work         ;
+;       |registre_1bit:reg_C|               ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|registre_1bit:reg_C                                                ; registre_1bit   ; work         ;
+;       |registre_1bit:reg_Z|               ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|registre_1bit:reg_Z                                                ; registre_1bit   ; work         ;
 ;       |regn:reg_0|                        ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_0                                                         ; regn            ; work         ;
 ;       |regn:reg_1|                        ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_1                                                         ; regn            ; work         ;
 ;       |regn:reg_2|                        ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_2                                                         ; regn            ; work         ;
 ;       |regn:reg_3|                        ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_3                                                         ; regn            ; work         ;
 ;       |regn:reg_4|                        ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_4                                                         ; regn            ; work         ;
-;       |regn:reg_5|                        ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_5                                                         ; regn            ; work         ;
 ;       |regn:reg_ADDR|                     ; 0 (0)               ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_ADDR                                                      ; regn            ; work         ;
 ;       |regn:reg_A|                        ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_A                                                         ; regn            ; work         ;
 ;       |regn:reg_DOUT|                     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_DOUT                                                      ; regn            ; work         ;
 ;       |regn:reg_G|                        ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_G                                                         ; regn            ; work         ;
 ;       |regn:reg_IR|                       ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regn:reg_IR                                                        ; regn            ; work         ;
-;       |regntimer:reg_6|                   ; 0 (0)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|regntimer:reg_6                                                    ; regntimer       ; work         ;
-;       |timer:timer_0|                     ; 21 (21)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |part5|proc:U3|timer:timer_0                                                      ; timer           ; work         ;
 ;    |regn:U5|                              ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|regn:U5                                                                    ; regn            ; work         ;
 ;    |regn:U6|                              ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|regn:U6                                                                    ; regn            ; work         ;
 ;    |seg7:U7|                              ; 9 (1)               ; 7 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |part5|seg7:U7                                                                    ; seg7            ; work         ;
@@ -323,53 +326,73 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; proc:U3|timer:timer_0|sortie[1..15]    ; Stuck at GND due to stuck port data_in ;
-; proc:U3|regn:reg_5|Q[1..15]            ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 30 ;                                        ;
-+----------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++----------------------------------------------+----------------------------------------+
+; Register name                                ; Reason for Removal                     ;
++----------------------------------------------+----------------------------------------+
+; proc:U3|timer:timer_0|sortie[1..15]          ; Stuck at GND due to stuck port data_in ;
+; proc:U3|regn:reg_interrup|Q[1..15]           ; Stuck at GND due to stuck port data_in ;
+; proc:U3|regn:reg_interrup|Q[0]               ; Stuck at VCC due to stuck port data_in ;
+; proc:U3|timer:timer_0|sortie[0]              ; Lost fanout                            ;
+; proc:U3|timer:timer_0|s_count[8]             ; Lost fanout                            ;
+; proc:U3|registre_timer:reg_6|Q[4]            ; Lost fanout                            ;
+; proc:U3|timer:timer_0|s_count[0..7,9..15]    ; Lost fanout                            ;
+; proc:U3|registre_timer:reg_6|Q[5]            ; Lost fanout                            ;
+; proc:U3|prescaler:prescaler_0|s_clkout       ; Lost fanout                            ;
+; proc:U3|registre_timer:reg_6|Q[0..3]         ; Lost fanout                            ;
+; proc:U3|prescaler:prescaler_0|s_count[0..15] ; Lost fanout                            ;
+; Total Number of Removed Registers = 71       ;                                        ;
++----------------------------------------------+----------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                           ;
-+----------------------------------+---------------------------+----------------------------------------+
-; Register name                    ; Reason for Removal        ; Registers Removed due to This Register ;
-+----------------------------------+---------------------------+----------------------------------------+
-; proc:U3|timer:timer_0|sortie[1]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[1]                ;
-;                                  ; due to stuck port data_in ;                                        ;
-; proc:U3|timer:timer_0|sortie[2]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[2]                ;
-;                                  ; due to stuck port data_in ;                                        ;
-; proc:U3|timer:timer_0|sortie[3]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[3]                ;
-;                                  ; due to stuck port data_in ;                                        ;
-; proc:U3|timer:timer_0|sortie[4]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[4]                ;
-;                                  ; due to stuck port data_in ;                                        ;
-; proc:U3|timer:timer_0|sortie[5]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[5]                ;
-;                                  ; due to stuck port data_in ;                                        ;
-; proc:U3|timer:timer_0|sortie[6]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[6]                ;
-;                                  ; due to stuck port data_in ;                                        ;
-; proc:U3|timer:timer_0|sortie[7]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[7]                ;
-;                                  ; due to stuck port data_in ;                                        ;
-; proc:U3|timer:timer_0|sortie[8]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[8]                ;
-;                                  ; due to stuck port data_in ;                                        ;
-; proc:U3|timer:timer_0|sortie[9]  ; Stuck at GND              ; proc:U3|regn:reg_5|Q[9]                ;
-;                                  ; due to stuck port data_in ;                                        ;
-; proc:U3|timer:timer_0|sortie[10] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[10]               ;
-;                                  ; due to stuck port data_in ;                                        ;
-; proc:U3|timer:timer_0|sortie[11] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[11]               ;
-;                                  ; due to stuck port data_in ;                                        ;
-; proc:U3|timer:timer_0|sortie[12] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[12]               ;
-;                                  ; due to stuck port data_in ;                                        ;
-; proc:U3|timer:timer_0|sortie[13] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[13]               ;
-;                                  ; due to stuck port data_in ;                                        ;
-; proc:U3|timer:timer_0|sortie[14] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[14]               ;
-;                                  ; due to stuck port data_in ;                                        ;
-; proc:U3|timer:timer_0|sortie[15] ; Stuck at GND              ; proc:U3|regn:reg_5|Q[15]               ;
-;                                  ; due to stuck port data_in ;                                        ;
-+----------------------------------+---------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                 ;
++----------------------------------+---------------------------+------------------------------------------------------------------------------+
+; Register name                    ; Reason for Removal        ; Registers Removed due to This Register                                       ;
++----------------------------------+---------------------------+------------------------------------------------------------------------------+
+; proc:U3|timer:timer_0|sortie[1]  ; Stuck at GND              ; proc:U3|regn:reg_interrup|Q[1], proc:U3|timer:timer_0|sortie[0],             ;
+;                                  ; due to stuck port data_in ; proc:U3|registre_timer:reg_6|Q[5], proc:U3|prescaler:prescaler_0|s_clkout,   ;
+;                                  ;                           ; proc:U3|registre_timer:reg_6|Q[3], proc:U3|prescaler:prescaler_0|s_count[8], ;
+;                                  ;                           ; proc:U3|prescaler:prescaler_0|s_count[9],                                    ;
+;                                  ;                           ; proc:U3|prescaler:prescaler_0|s_count[10],                                   ;
+;                                  ;                           ; proc:U3|prescaler:prescaler_0|s_count[11],                                   ;
+;                                  ;                           ; proc:U3|prescaler:prescaler_0|s_count[12],                                   ;
+;                                  ;                           ; proc:U3|prescaler:prescaler_0|s_count[13],                                   ;
+;                                  ;                           ; proc:U3|prescaler:prescaler_0|s_count[14],                                   ;
+;                                  ;                           ; proc:U3|prescaler:prescaler_0|s_count[15]                                    ;
+; proc:U3|timer:timer_0|s_count[8] ; Lost Fanouts              ; proc:U3|registre_timer:reg_6|Q[4], proc:U3|timer:timer_0|s_count[9],         ;
+;                                  ;                           ; proc:U3|timer:timer_0|s_count[10], proc:U3|timer:timer_0|s_count[11],        ;
+;                                  ;                           ; proc:U3|timer:timer_0|s_count[12], proc:U3|timer:timer_0|s_count[13]         ;
+; proc:U3|timer:timer_0|sortie[2]  ; Stuck at GND              ; proc:U3|regn:reg_interrup|Q[2]                                               ;
+;                                  ; due to stuck port data_in ;                                                                              ;
+; proc:U3|timer:timer_0|sortie[3]  ; Stuck at GND              ; proc:U3|regn:reg_interrup|Q[3]                                               ;
+;                                  ; due to stuck port data_in ;                                                                              ;
+; proc:U3|timer:timer_0|sortie[4]  ; Stuck at GND              ; proc:U3|regn:reg_interrup|Q[4]                                               ;
+;                                  ; due to stuck port data_in ;                                                                              ;
+; proc:U3|timer:timer_0|sortie[5]  ; Stuck at GND              ; proc:U3|regn:reg_interrup|Q[5]                                               ;
+;                                  ; due to stuck port data_in ;                                                                              ;
+; proc:U3|timer:timer_0|sortie[6]  ; Stuck at GND              ; proc:U3|regn:reg_interrup|Q[6]                                               ;
+;                                  ; due to stuck port data_in ;                                                                              ;
+; proc:U3|timer:timer_0|sortie[7]  ; Stuck at GND              ; proc:U3|regn:reg_interrup|Q[7]                                               ;
+;                                  ; due to stuck port data_in ;                                                                              ;
+; proc:U3|timer:timer_0|sortie[8]  ; Stuck at GND              ; proc:U3|regn:reg_interrup|Q[8]                                               ;
+;                                  ; due to stuck port data_in ;                                                                              ;
+; proc:U3|timer:timer_0|sortie[9]  ; Stuck at GND              ; proc:U3|regn:reg_interrup|Q[9]                                               ;
+;                                  ; due to stuck port data_in ;                                                                              ;
+; proc:U3|timer:timer_0|sortie[10] ; Stuck at GND              ; proc:U3|regn:reg_interrup|Q[10]                                              ;
+;                                  ; due to stuck port data_in ;                                                                              ;
+; proc:U3|timer:timer_0|sortie[11] ; Stuck at GND              ; proc:U3|regn:reg_interrup|Q[11]                                              ;
+;                                  ; due to stuck port data_in ;                                                                              ;
+; proc:U3|timer:timer_0|sortie[12] ; Stuck at GND              ; proc:U3|regn:reg_interrup|Q[12]                                              ;
+;                                  ; due to stuck port data_in ;                                                                              ;
+; proc:U3|timer:timer_0|sortie[13] ; Stuck at GND              ; proc:U3|regn:reg_interrup|Q[13]                                              ;
+;                                  ; due to stuck port data_in ;                                                                              ;
+; proc:U3|timer:timer_0|sortie[14] ; Stuck at GND              ; proc:U3|regn:reg_interrup|Q[14]                                              ;
+;                                  ; due to stuck port data_in ;                                                                              ;
+; proc:U3|timer:timer_0|sortie[15] ; Stuck at GND              ; proc:U3|regn:reg_interrup|Q[15]                                              ;
+;                                  ; due to stuck port data_in ;                                                                              ;
++----------------------------------+---------------------------+------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -377,12 +400,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 249   ;
-; Number of registers using Synchronous Clear  ; 48    ;
+; Total registers                              ; 208   ;
+; Number of registers using Synchronous Clear  ; 16    ;
 ; Number of registers using Synchronous Load   ; 32    ;
 ; Number of registers using Asynchronous Clear ; 6     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 214   ;
+; Number of registers using Clock Enable       ; 190   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -460,23 +483,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: proc:U3|regn:reg_5 ;
-+----------------+-------+----------------------------------------+
-; Parameter Name ; Value ; Type                                   ;
-+----------------+-------+----------------------------------------+
-; n              ; 16    ; Signed Integer                         ;
-+----------------+-------+----------------------------------------+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: proc:U3|regn:reg_interrup ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; n              ; 16    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: proc:U3|regntimer:reg_6 ;
-+----------------+-------+---------------------------------------------+
-; Parameter Name ; Value ; Type                                        ;
-+----------------+-------+---------------------------------------------+
-; n              ; 16    ; Signed Integer                              ;
-+----------------+-------+---------------------------------------------+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: proc:U3|registre_timer:reg_6 ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; n              ; 16    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -651,7 +674,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "proc:U3|regntimer:reg_6"                                                                ;
+; Port Connectivity Checks: "proc:U3|registre_timer:reg_6"                                                           ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port     ; Type   ; Severity ; Details                                                                             ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
@@ -682,33 +705,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 249                         ;
+; arriav_ff             ; 208                         ;
 ;     CLR               ; 6                           ;
-;     ENA               ; 166                         ;
-;     ENA SCLR          ; 16                          ;
+;     ENA               ; 158                         ;
 ;     ENA SCLR SLD      ; 16                          ;
 ;     ENA SLD           ; 16                          ;
-;     SCLR              ; 16                          ;
-;     plain             ; 13                          ;
-; arriav_lcell_comb     ; 250                         ;
-;     arith             ; 66                          ;
-;         1 data inputs ; 48                          ;
+;     plain             ; 12                          ;
+; arriav_lcell_comb     ; 192                         ;
+;     arith             ; 34                          ;
+;         1 data inputs ; 16                          ;
 ;         2 data inputs ; 2                           ;
 ;         4 data inputs ; 16                          ;
-;     extend            ; 6                           ;
-;         7 data inputs ; 6                           ;
-;     normal            ; 178                         ;
+;     extend            ; 5                           ;
+;         7 data inputs ; 5                           ;
+;     normal            ; 153                         ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 36                          ;
-;         3 data inputs ; 25                          ;
-;         4 data inputs ; 30                          ;
-;         5 data inputs ; 30                          ;
-;         6 data inputs ; 56                          ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 15                          ;
+;         5 data inputs ; 34                          ;
+;         6 data inputs ; 52                          ;
 ; boundary_port         ; 64                          ;
 ; stratixv_ram_block    ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.10                       ;
-; Average LUT depth     ; 5.11                        ;
+; Average LUT depth     ; 5.82                        ;
 +-----------------------+-----------------------------+
 
 
@@ -727,58 +748,66 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Fri Apr 10 11:10:59 2020
+    Info: Processing started: Fri Apr 10 21:47:30 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part5 -c part5
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file part5.vhd
     Info (12022): Found design unit 1: part5-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 14
     Info (12023): Found entity 1: part5 File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 6
-Info (12021): Found 18 design units, including 9 entities, in source file proc.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file proc.vhd
     Info (12022): Found design unit 1: proc-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 14
-    Info (12022): Found design unit 2: pc_count-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 410
-    Info (12022): Found design unit 3: dec3to8-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 436
-    Info (12022): Found design unit 4: regn-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 465
-    Info (12022): Found design unit 5: regn1bit-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 486
-    Info (12022): Found design unit 6: regntimer-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 511
-    Info (12022): Found design unit 7: prescaler-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 539
-    Info (12022): Found design unit 8: timer-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 603
-    Info (12022): Found design unit 9: PSA-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 664
     Info (12023): Found entity 1: proc File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 5
-    Info (12023): Found entity 2: pc_count File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 404
-    Info (12023): Found entity 3: dec3to8 File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 431
-    Info (12023): Found entity 4: regn File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 457
-    Info (12023): Found entity 5: regn1bit File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 480
-    Info (12023): Found entity 6: regntimer File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 503
-    Info (12023): Found entity 7: prescaler File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 531
-    Info (12023): Found entity 8: timer File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 593
-    Info (12023): Found entity 9: PSA File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 658
+Info (12021): Found 2 design units, including 1 entities, in source file pc_count.vhd
+    Info (12022): Found design unit 1: pc_count-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/pc_count.vhd Line: 11
+    Info (12023): Found entity 1: pc_count File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/pc_count.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file dec3to8.vhd
+    Info (12022): Found design unit 1: dec3to8-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/dec3to8.vhd Line: 9
+    Info (12023): Found entity 1: dec3to8 File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/dec3to8.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file regn.vhd
+    Info (12022): Found design unit 1: regn-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/regn.vhd Line: 12
+    Info (12023): Found entity 1: regn File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/regn.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file registre_1bit.vhd
+    Info (12022): Found design unit 1: registre_1bit-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/registre_1bit.vhd Line: 10
+    Info (12023): Found entity 1: registre_1bit File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/registre_1bit.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file registre_timer.vhd
+    Info (12022): Found design unit 1: registre_timer-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/registre_timer.vhd Line: 12
+    Info (12023): Found entity 1: registre_timer File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/registre_timer.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file prescaler.vhd
+    Info (12022): Found design unit 1: prescaler-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/prescaler.vhd Line: 13
+    Info (12023): Found entity 1: prescaler File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/prescaler.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
+    Info (12022): Found design unit 1: timer-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/timer.vhd Line: 16
+    Info (12023): Found entity 1: timer File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/timer.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file psa.vhd
+    Info (12022): Found design unit 1: psa-rtl File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/psa.vhd Line: 12
+    Info (12023): Found entity 1: psa File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/psa.vhd Line: 6
 Info (12127): Elaborating entity "part5" for the top level hierarchy
 Warning (12125): Using design file flipflop.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: flipflop-Behavior File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/flipflop.vhd Line: 9
     Info (12023): Found entity 1: flipflop File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/flipflop.vhd Line: 4
 Info (12128): Elaborating entity "flipflop" for hierarchy "flipflop:U1" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 53
 Info (12128): Elaborating entity "proc" for hierarchy "proc:U3" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 57
-Warning (10541): VHDL Signal Declaration warning at proc.vhd(109): used implicit default value for signal "R6" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 109
-Warning (10492): VHDL Process Statement warning at proc.vhd(185): signal "z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 185
-Warning (10492): VHDL Process Statement warning at proc.vhd(193): signal "z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 193
-Warning (10492): VHDL Process Statement warning at proc.vhd(201): signal "c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 201
-Warning (10492): VHDL Process Statement warning at proc.vhd(209): signal "c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 209
-Warning (10631): VHDL Process Statement warning at proc.vhd(343): inferring latch(es) for signal or variable "flag_c", which holds its previous value in one or more paths through the process File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 343
-Warning (10631): VHDL Process Statement warning at proc.vhd(343): inferring latch(es) for signal or variable "flag_z", which holds its previous value in one or more paths through the process File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 343
-Info (10041): Inferred latch for "flag_z" at proc.vhd(343) File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 343
-Info (10041): Inferred latch for "flag_c" at proc.vhd(343) File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 343
-Info (12128): Elaborating entity "dec3to8" for hierarchy "proc:U3|dec3to8:decX" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 119
-Info (12128): Elaborating entity "regn" for hierarchy "proc:U3|regn:reg_0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 315
-Info (12128): Elaborating entity "regntimer" for hierarchy "proc:U3|regntimer:reg_6" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 324
-Info (12128): Elaborating entity "pc_count" for hierarchy "proc:U3|pc_count:Upc" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 327
-Info (12128): Elaborating entity "prescaler" for hierarchy "proc:U3|prescaler:prescaler_0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 336
-Warning (10492): VHDL Process Statement warning at proc.vhd(551): signal "prescale" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 551
-Info (12128): Elaborating entity "PSA" for hierarchy "proc:U3|PSA:psa_0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 337
-Info (12128): Elaborating entity "timer" for hierarchy "proc:U3|timer:timer_0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 340
-Warning (10492): VHDL Process Statement warning at proc.vhd(623): signal "selecteur8_16" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 623
-Warning (10492): VHDL Process Statement warning at proc.vhd(629): signal "timer_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 629
-Info (12128): Elaborating entity "regn1bit" for hierarchy "proc:U3|regn1bit:reg_C" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 377
+Warning (10541): VHDL Signal Declaration warning at proc.vhd(106): used implicit default value for signal "R6" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at proc.vhd(182): signal "z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 182
+Warning (10492): VHDL Process Statement warning at proc.vhd(190): signal "z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 190
+Warning (10492): VHDL Process Statement warning at proc.vhd(198): signal "c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 198
+Warning (10492): VHDL Process Statement warning at proc.vhd(206): signal "c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 206
+Warning (10631): VHDL Process Statement warning at proc.vhd(330): inferring latch(es) for signal or variable "flag_c", which holds its previous value in one or more paths through the process File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 330
+Warning (10631): VHDL Process Statement warning at proc.vhd(330): inferring latch(es) for signal or variable "flag_z", which holds its previous value in one or more paths through the process File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 330
+Info (10041): Inferred latch for "flag_z" at proc.vhd(330) File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 330
+Info (10041): Inferred latch for "flag_c" at proc.vhd(330) File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 330
+Info (12128): Elaborating entity "dec3to8" for hierarchy "proc:U3|dec3to8:decX" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 116
+Info (12128): Elaborating entity "regn" for hierarchy "proc:U3|regn:reg_0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 311
+Info (12128): Elaborating entity "registre_timer" for hierarchy "proc:U3|registre_timer:reg_6" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 317
+Info (12128): Elaborating entity "pc_count" for hierarchy "proc:U3|pc_count:Upc" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 318
+Info (12128): Elaborating entity "prescaler" for hierarchy "proc:U3|prescaler:prescaler_0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 325
+Warning (10492): VHDL Process Statement warning at prescaler.vhd(25): signal "prescale" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/prescaler.vhd Line: 25
+Info (12128): Elaborating entity "psa" for hierarchy "proc:U3|psa:psa_0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 326
+Info (12128): Elaborating entity "timer" for hierarchy "proc:U3|timer:timer_0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 327
+Warning (10492): VHDL Process Statement warning at timer.vhd(28): signal "selecteur8_16" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/timer.vhd Line: 28
+Warning (10492): VHDL Process Statement warning at timer.vhd(36): signal "timer_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/timer.vhd Line: 36
+Info (12128): Elaborating entity "registre_1bit" for hierarchy "proc:U3|registre_1bit:reg_C" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 360
 Warning (12125): Using design file inst_mem.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: inst_mem-SYN File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd Line: 54
     Info (12023): Found entity 1: inst_mem File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/inst_mem.vhd Line: 42
@@ -853,7 +882,7 @@ Warning (10541): VHDL Signal Declaration warning at seg7.vhd(9): used implicit d
 Warning (10541): VHDL Signal Declaration warning at seg7.vhd(9): used implicit default value for signal "H1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd Line: 9
 Info (12128): Elaborating entity "regne" for hierarchy "seg7:U7|regne:reg_R0" File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/seg7.vhd Line: 27
 Warning (19016): Clock multiplexers are found and protected
-    Warning (19017): Found clock multiplexer proc:U3|PSA:psa_0|Selector0~0 File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/proc.vhd Line: 666
+    Warning (19017): Found clock multiplexer proc:U3|psa:psa_0|Selector0~0 File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/psa.vhd Line: 14
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
     Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
@@ -891,17 +920,18 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
     Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/The_N/Documents/GitHub/6GEI367-projet-conceptioin/part5.VHDL/part5.vhd Line: 10
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 40 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 486 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 422 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 406 logic cells
+    Info (21061): Implemented 342 logic cells
     Info (21064): Implemented 16 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 57 warnings
     Info: Peak virtual memory: 4872 megabytes
-    Info: Processing ended: Fri Apr 10 11:11:12 2020
+    Info: Processing ended: Fri Apr 10 21:47:43 2020
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Total CPU time (on all processors): 00:00:28
 
 
